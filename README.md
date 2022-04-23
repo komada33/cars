@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# cars
 
-Things you may want to cover:
+## サイト概要
 
-* Ruby version
+車好きのユーザーの情報交換の場、パーツの感想や故障時の対処法などを共有できるサイト。
 
-* System dependencies
+### サイトテーマ
 
-* Configuration
+車に関する情報の共有。
 
-* Database creation
+### テーマを選んだ理由
+自分は車が好きなのですが、自分が好きになる車はマイナーな車が多いため、
+その車の情報が少ないと感じることがあります。そこで自分と同じことで悩んでいる人もいると思い、
+情報交換の場が出来れば、車をさらに楽しむこと出来ると思い、このテーマにしました。
 
-* Database initialization
+### ターゲットユーザ
 
-* How to run the test suite
+車好きはもちろん、あまり車に興味がなくても故障をした際の対処法などの質問をしたい方々へ。
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+交換してみた車のパーツの感想、気になったパーツ質問をしたい時や、
+故障の原因や対処法を知りたい時に活用できます。
 
-* ...
+## 設計書
+<...>
+
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1ChhMqHNvh9-cCwl4mFLaLN1EjfD6b-R2mIrjCGD3wiE/edit?usp=sharing>
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+- font awesome <https://fontawesome.com/>
+
