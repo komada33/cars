@@ -1,13 +1,13 @@
 require "test_helper"
 
-class GenresControllerTest < ActionDispatch::IntegrationTest
+class MakerGenresControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get genres_index_url
+    get maker_genres_index_url
     assert_response :success
   end
 
   test "should get edit" do
-    get genres_edit_url
+    get maker_genres_edit_url
     assert_response :success
   end
 end

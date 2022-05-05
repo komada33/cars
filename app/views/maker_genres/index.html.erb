@@ -1,0 +1,20 @@
+<div>
+
+  <div>
+　　<div>メーカー</div>
+
+      <%= form_with model: @maker, url: maker_genres_path, local:true do |f| %>
+        <div>メーカー名</div>
+        <div><%= f.text_field :maker %></div>
+        <div><%= f.submit "メーカー名登録" %></div>
+      <% end %>
+
+    <div>メーカー一覧</div>
+      <% @makers.each do |maker| %>
+        <table>
+          <th><%= maker.maker %></th>
+          <tb><%= link_to "編集", edit_maker_genre_path(maker.id) %></tb>
+        </table>
+      <% end %>
+　</div>
+</div>

@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
+  get 'parts_genres/index'
+  get 'parts_genres/edit'
+  get 'maker_genres/index'
+  get 'maker_genres/edit'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
 
   root 'homes#top'
 
-  get 'users/index'
-  get 'users/edit'
-  get 'users/show'
-  get 'posts/new'
-  get 'posts/index'
-  get 'posts/edit'
-  get 'posts/show'
-  get 'genres/index'
-  get 'genres/edit'
-
+  resources :users
+  resources :posts
+  resources :maker_genres
+  resources :parts_genres
+  resources :coments
+  resources :goods
+  resources :relationships
+  resources :admin_users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

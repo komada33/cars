@@ -1,0 +1,9 @@
+<div>
+  <div><h1>パーツ名編集</h1></div>
+
+  <%= form_with model: @part, url: parts_genre_path(@part.id), method: :patch, local:true do |f| %>
+    <div>メーカー名</div>
+    <div><%= f.text_field :parts %></div>
+    <div><%= f.submit "編集" %></div>
+  <% end %>
+</div>

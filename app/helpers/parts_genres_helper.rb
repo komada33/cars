@@ -1,0 +1,2 @@
+module PartsGenresHelper
+end

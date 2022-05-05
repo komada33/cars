@@ -1,0 +1,20 @@
+<div>
+
+  <div>
+　　<div>パーツジャンル</div>
+
+      <%= form_with model: @part, url: parts_genres_path, local:true do |f| %>
+        <div>パーツ名</div>
+        <div><%= f.text_field :parts %></div>
+        <div><%= f.submit "パーツ名登録" %></div>
+      <% end %>
+
+    <div>パーツ一覧</div>
+      <% @parts.each do |parts| %>
+        <table>
+          <th><%= parts.parts %></th>
+          <tb><%= link_to "編集", edit_parts_genre_path(parts.id) %></tb>
+        </table>
+      <% end %>
+　</div>
+</div>

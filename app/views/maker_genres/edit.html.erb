@@ -1,0 +1,9 @@
+<div>
+  <div><h1>メーカー名編集</h1></div>
+
+  <%= form_with model: @maker, url: maker_genre_path(@maker.id), method: :patch, local:true do |f| %>
+    <div>メーカー名</div>
+    <div><%= f.text_field :maker %></div>
+    <div><%= f.submit "編集" %></div>
+  <% end %>
+</div>
