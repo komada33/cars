@@ -4,8 +4,28 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :plofile_image %><br />
+    <%= f.file_field :plofile_image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maker_genre %><br />
+    <%= f.collection_select :maker_genre, MakerGenre.all, :id, :maker, options = { include_blank: true, :prompt => "選択して下さい" } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :car_name %><br />
+    <%= f.text_field :car_name %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">

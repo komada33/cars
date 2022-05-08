@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'parts_genres/index'
-  get 'parts_genres/edit'
-  get 'maker_genres/index'
-  get 'maker_genres/edit'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
