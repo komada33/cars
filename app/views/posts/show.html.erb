@@ -1,2 +1,32 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>投稿内容</h1>
+　<div>
+　　<%= image_tag @post.get_post_image(200,200) %>
+　</div>
+
+　<div>
+    <%= @post.user_id %>
+　</div>
+
+　<div>
+    <%= @post.user.car_name %>
+　</div>
+
+　<div>
+    <%= @post.user.maker_genre.maker %>
+　</div>
+
+　<div>
+　  <%= @post.parts_genre.parts %>
+　</div>
+
+　<div>
+　  <%= @post.title %>
+　</div>
+
+　<div>
+　  <%= @post.message %>
+　</div>
+
+<div>
+  <h1>コメント</h1>
+</div>

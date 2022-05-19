@@ -1,2 +1,28 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>ユーザー編集</h1>
+  <%= form_with model: @user, method: :patch, local:true do |f| %>
+    <div>
+      <p>プロフィール画像</p>
+      <%= f.file_field :plofile_image %>
+    </div>
+
+    <div>
+      <p>ユーザーネーム</p>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <p>車名</p>
+      <%= f.text_field :car_name %>
+    </div>
+
+    <div>
+      <p>メーカー</p>
+      <%= f.collection_select :maker_genre_id, MakerGenre.all, :id, :maker, options = { include_blank: true, :prompt => "選択して下さい" } %>
+    </div>
+
+    <div>
+      <%= f.submit "編集" %>
+    </div>
+
+  <% end %>
+

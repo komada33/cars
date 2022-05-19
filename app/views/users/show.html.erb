@@ -1,2 +1,26 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>マイページ</h1>
+  <div>
+    <%= image_tag @user.get_profile_image(50,50) %>
+  </div>
+
+　<div>
+　  <%= @user.name %>
+　</div>
+
+　<div>
+    <%= @user.maker_genre.maker %>
+　</div>
+
+　<div>
+　  <%= @user.car_name %>
+　</div>
+
+　<div>
+　  <%= link_to "編集", edit_user_path(@user.id) %>
+　</div>
+
+　<div>
+　  <h1>投稿一覧</h1>
+　</div>
+
+

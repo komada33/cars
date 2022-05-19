@@ -2,6 +2,8 @@
   <% if user_signed_in? %>
     <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     <p><%= link_to "ユーザーず", users_path %></p>
+    <p><%= link_to "新規投稿", new_post_path %></p>
+    <p><%= link_to "投稿一覧", posts_path %></p>
   <% elsif admin_user_signed_in? %>
     <p><%= link_to "メーカー作成", maker_genres_path %></p>
     <p><%= link_to "パーツ名作成", parts_genres_path %></p>

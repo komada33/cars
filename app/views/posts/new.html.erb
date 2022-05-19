@@ -1,2 +1,24 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>新規投稿</h1>
+<%= form_with model: @post, local:true do |f| %>
+
+  <div>
+    <%= f.file_field :post_image %>
+  </div>
+
+  <div>
+    <%= f.text_field :title %>
+  </div>
+
+  <dev>
+    <%= f.collection_select :parts_genre_id, PartsGenre.all, :id, :parts, options = { include_blank: true, :prompt => "選択して下さい" } %>
+  </dev>
+
+  <div>
+    <%= f.text_area :message %>
+  </div>
+
+  <div>
+    <%= f.submit "新規投稿" %>
+  </div>
+
+<% end %>
