@@ -1,0 +1,2 @@
+class PartsGenre < ApplicationRecord
+end
