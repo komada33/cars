@@ -1,0 +1,14 @@
+<div class="genre2">
+
+  <h2>PartsGenre Edit</h2>
+
+
+  <div class="genre_form2">
+    <%= form_with model: @part, url: admin_parts_genre_path(@part.id), method: :patch, local:true do |f| %>
+      <%= f.text_field :pname %>
+      <%= f.submit "編集" %>
+    <% end %>
+  </div>
+
+</div>
+

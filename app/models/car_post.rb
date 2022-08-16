@@ -1,0 +1,2 @@
+class CarPost < ApplicationRecord
+end

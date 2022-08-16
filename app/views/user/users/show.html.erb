@@ -1,0 +1,99 @@
+<%= render partial: 'layouts/sidebar' %>
+
+<div class="show-user">
+
+  <div class="show-user-content">
+
+    <div class="show-user-box">
+
+      <% if @user.plofile_image.attached? %>
+        <%= link_to user_path(@user.id) do %>
+          <%= image_tag @user.plofile_image, class: "plofile-image" %>
+        <% end %>
+      <% else %>
+        <%= link_to user_path(@user.id) do %>
+          <%= image_tag asset_path("no_image.jpg"), class: "plofile-imag" %>
+        <% end %>
+      <% end %>
+
+      <div class="show-user-right">
+        <div class="show-user-name"><%= link_to @user.name, user_path(@user.id), 'data-turbolinks': false %></div>
+        <div class="show-user-car"><%= link_to @user.maker_genre.mname, user_path(@user.id), 'data-turbolinks': false %>. <%= link_to @user.car_name, user_path(@user.id), 'data-turbolinks': false %></div>
+      </div>
+
+      <div class="show-user-follow">
+        <% if @user.id == current_user.id %>
+            <i class="fa-solid fa-user-gear"></i><%= link_to "ユーザー編集", edit_user_path(@user.id) %>
+          <% else %>
+            <% if current_user.following(@user) %>
+              <i class="fa-solid fa-handshake-simple-slash"></i><%= link_to "フォロー外す", user_relationships_path(@user.id), method: :delete %>
+            <% else %>
+              <i class="fa-solid fa-handshake-simple"></i><%= link_to "フォローする", user_relationships_path(@user.id), method: :post %>
+            <% end %>
+        <% end %>
+
+      </div>
+
+    </div>
+
+    <div class="show-user-count">
+      <div class="show-user-followings"><%= link_to "フォロー", user_followings_path(@user.id) %>. <%= @user.followings.count %></div>
+      <div class="show-user-followers"><%= link_to "フォロワー", user_followers_path(@user.id) %>. <%= @user.followers.count %></div>
+      <div class="show-user-carposts-count">CarPosts. <%= @user.car_posts.count %></div>
+    </div>
+
+  </div>
+
+  <div class="show-user-carposts">
+    <h2>投稿一覧</h2>
+  </div>
+
+  <%  unless @carposts.present? %>
+    <p>投稿がありません</p>
+  <% else %>
+
+  <% @carposts.each do |carpost| %>
+    <div class="show-user-carpost">
+
+      <div class="show-user-carpost-time">
+        <%= carpost.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      </div>
+
+      <div class="slider">
+        <% carpost.car_images.each do |carimages| %>
+          <%= link_to car_post_path(carpost.id) do %>
+             <%= image_tag carimages.url.to_s, class: "car-image" %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="show-user-carpost-text">
+
+        <div class="show-user-genre">
+          ジャンル:<%= carpost.parts_genre.pname %>
+        </div>
+
+        <div class="show-user-btn">
+          <div class="show-user-good">
+            <i class="fa-solid fa-heart"></i>いいね！<%= Good.where(car_post_id: carpost.id).count %>
+          </div>
+          <div class="show-user-comment-count">
+            <i class="fa-regular fa-comment-dots"></i>コメント<%= Comment.where(car_post_id: carpost.id).count %>
+          </div>
+        </div>
+
+        <div class="show-user-title">
+          <%= carpost.title %>
+        </div>
+
+      </div>
+
+    </div>
+  <% end %>
+  <% end %>
+
+  <div class="page">
+    <%= paginate @carposts %>
+  </div>
+
+</div>

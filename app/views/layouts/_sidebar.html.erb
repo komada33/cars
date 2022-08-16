@@ -1,0 +1,52 @@
+<% if admin_signed_in? %>
+<% else %>
+
+
+
+<div class="side">
+  <% if user_signed_in? %>
+        <div class="side-image">
+          <% if current_user.plofile_image.attached? %>
+            <%= link_to user_path(current_user.id) do %>
+              <%= image_tag current_user.plofile_image, class: "plofile-image" %>
+            <% end %>
+          <% else %>
+            <%= link_to user_path(current_user.id) do %>
+              <%= image_tag asset_path("no_image.jpg"), class: "no_image" %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="side-user">
+          <div class="side-name"><%= link_to current_user.name, user_path(current_user.id) %></div>
+          <div class="side-name"><%= link_to current_user.maker_genre.mname, user_path(current_user.id) %></div>
+          <div class="side-name"><%= link_to current_user.car_name, user_path(current_user.id) %></div>
+        </div>
+
+        <div class="side-menu">
+          <div class="side-new-carpost"><%= link_to "新規投稿", new_car_post_path %> <i class="fa-solid fa-pen-to-square"></i></div>
+
+          <div class="side-user-edit"><%= link_to "ユーザー編集", edit_user_path(current_user.id), class: "edit-btn" %> <i class="fa-solid fa-user-gear"></i></div>
+
+          <div class="side-logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <i class="fa-solid fa-right-from-bracket"></i></div>
+        </div>
+   <% else %>
+        <div class="side-image">
+          <%= image_tag 'no_image.jpg', class: "no_image" %>
+        </div>
+
+        <div class="side-user">
+          <div class="side-user-name">ログイン</div>
+          <div class="side-user-mname">されていません</div>
+          <div class="side-user-car"><i class="fa-solid fa-hand-point-down"></i></div>
+        </div>
+
+        <div class="side-menu">
+          <div class="side-new-carpost"><%= link_to "新規登録", new_user_registration_path %> <i class="fa-solid fa-play"></i></div>
+          <div class="side-logout"><%= link_to "ログイン", new_user_session_path %> <i class="fa-solid fa-right-to-bracket"></i></div>
+          <div class="side-user-edit"><%= link_to "About", about_path %></div>
+        </div>
+   <% end %>
+ </div>
+ <div class="side-box"></div>
+ <% end %>

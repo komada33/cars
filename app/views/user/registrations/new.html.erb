@@ -1,0 +1,86 @@
+<div class="form">
+
+  <h2>Sign Up!</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "user/shared/error_messages", resource: resource %>
+
+  <div class="form-item">
+    <div class="form-item-label">
+      <%= f.label :name, "ユーザーネーム" %><span>※20文字まで入力できます</span>
+    </div>
+
+    <div class="form-item-content">
+      <%= f.text_field :name, placeholder: "ユーザーネーム" %>
+    </div>
+  </div>
+
+  <div class="form-item">
+    <div class="form-item-label">
+      <%= f.label :maker_genre_id, "メーカー" %>
+    </div>
+    <div class="form-item-content">
+      <%= f.collection_select :maker_genre_id, MakerGenre.all, :id, :mname, { include_blank: "選択して下さい" }, {class: "select"} %>
+    </div>
+  </div>
+
+  <div class="form-item">
+    <div class="form-item-label">
+      <%= f.label :car_name, "車名" %><span>※20文字まで入力できます</span>
+    </div>
+    <div class="form-item-content">
+      <%= f.text_field :car_name, placeholder: "車名" %>
+    </div>
+  </div>
+
+  <div class="form-item">
+    <div class="form-new-image">
+      <%= f.label :plofile_image, "ユーザーアイコンを選択", class: "btn" %>
+      <%= f.file_field :plofile_image %>
+    </div>
+    <div class="form-new-plofile-image">
+      <img id="preview" class="plofile-image">
+    </div>
+  </div>
+
+  <div class="form-item">
+    <div class="form-item-label">
+      <%= f.label :email, "Eメール" %>
+    </div>
+    <div class="form-item-content">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Eメール" %>
+    </div>
+  </div>
+
+  <div class="form-item">
+    <div class="form-item-label">
+      <%= f.label :password, "パスワード" %><span>※半角6文字以上で入力してください</span>
+    </div>
+    <div class="form-item-content">
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+  </div>
+
+  <div class="form-item">
+    <div class="form-item-label">
+      <%= f.label :password_confirmation, "パスワード確認" %>
+    </div>
+    <div class="form-item-content">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+  </div>
+
+  <div class="form-btn">
+   <%= f.submit "新規登録" %>
+  </div>
+  <% end %>
+</div>
+<script>
+$('#user_plofile_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#preview").attr('src', e.target.result);
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  });
+</script>

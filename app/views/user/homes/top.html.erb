@@ -1,0 +1,65 @@
+<%= render partial: 'layouts/sidebar' %>
+
+
+<div class="home">
+  <h2>New Car !</h2>
+  <%  unless @carposts.present? %>
+    <p>投稿がありません</p>
+  <% else %>
+
+    <% @carposts.each do |carpost| %>
+
+      <div class="home-post">
+
+        <div class="new-post-time">
+          <%= carpost.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+        </div>
+
+        <div class="home-post-user">
+          <% if carpost.user.plofile_image.attached? %>
+            <%= link_to user_path(carpost.user.id) do %>
+              <%= image_tag carpost.user.plofile_image, class: "plofile-image" %>
+            <% end %>
+          <% else %>
+            <%= link_to user_path(carpost.user.id) do %>
+              <%= image_tag asset_path("no_image"), class: "plofile-image" %>
+            <% end %>
+          <% end %>
+          <div class="home-user-right">
+            <div class="user-name"><%= link_to carpost.user.name, user_path(carpost.user.id) %></div>
+            <div class="user-car"><%= carpost.user.maker_genre.mname %>. <%= carpost.user.car_name %></div>
+          </div>
+        </div>
+
+        <div class="slider">
+          <% carpost.car_images.each do |carimages| %>
+            <%= link_to car_post_path(carpost.id) do %>
+          　　<%= image_tag carimages.url.to_s, class: "home-car-image" %>
+          　<% end %>
+          <% end %>
+        </div>
+
+
+        <div class="home-post-text">
+          <div class="home-genre">
+            ジャンル:<%= carpost.parts_genre.pname %>
+          </div>
+
+          <div class="home-btn">
+            <div class="home-good">
+              <i class="fa-solid fa-heart"></i>いいね！<%= Good.where(car_post_id: carpost.id).count %>
+            </div>
+            <div class="home-comment-count">
+              <i class="fa-regular fa-comment-dots"></i>コメント<%= Comment.where(car_post_id: carpost.id).count %>
+            </div>
+          </div>
+
+          <div class="home-title">
+            <%= link_to carpost.title, car_post_path(carpost.id) %>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>

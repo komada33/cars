@@ -1,0 +1,28 @@
+
+<div class="genre">
+
+  <h2>PartsGenre</h2>
+
+  <div class="genre_form">
+    <%= form_with model: @part, url: '/admin/parts_genres', local:true do |f| %>
+      <%= f.text_field :pname %>
+      <%= f.submit "登録" %>
+    <% end %>
+  </div>
+
+
+  <% @parts.each do |parts_genre| %>
+    <div class="genres">
+
+      <div class="genre_name">
+        <%= parts_genre.pname %>
+      </div>
+      <div class="genre_edit">
+        <%= link_to "編集", edit_admin_parts_genre_path(parts_genre.id) %>
+      </div>
+
+    </div>
+  <% end %>
+
+</div>
+

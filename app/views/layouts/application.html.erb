@@ -11,6 +11,61 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div class="body">
+
+
+    <div class="header">
+      <div class="container">
+
+        <div class="logo_area">
+          <div class="logo">
+            <%= link_to "Cars!", root_path %>
+            <span style="color: #fff;"><i class="fa-solid fa-car-burst"></i></span>
+          </div>
+        </div>
+
+      <div class="menu-area">
+        <nav class="menu">
+          <ul>
+            <% if user_signed_in? %>
+            　<li><%= link_to "MakerGenre", maker_genres_path %></li>
+              <li><%= link_to "PartsGenre", parts_genres_path %></li>
+              <li><%= link_to "users", users_path %> <span style="color: #fff;"><i class="fa-solid fa-users"></i></span></li>
+              <li><%= link_to "CarPost", car_posts_path %> <span style="color: #fff;"><i class="fa-solid fa-truck"></i></span></li>
+              <li><%= link_to "About", about_path %></li>
+            <% elsif admin_signed_in? %>
+              <li><%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %></li>
+              <li><%= link_to "maker_genre", admin_maker_genres_path %></li>
+              <li><%= link_to "parts_genre", admin_parts_genres_path %></li>
+            <% else %>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "新規登録", new_user_registration_path %> <span style="color: #fff;"><i class="fa-solid fa-play"></i></span></li>
+              <li><%= link_to "ログイン", new_user_session_path %> <span style="color: #fff;"><i class="fa-solid fa-right-to-bracket"></i></span></li>
+              <li><%= link_to "管理者ログイン", new_admin_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+
+
+      </div>
+
+      </div>
+    </div>
+
+    <div class="header-box"></div>
+
+    <div class="main">
+
+
+
+      <%= yield %>
+
+
+
+    </div>
+
+  </div>
+
   </body>
 </html>

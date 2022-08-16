@@ -1,0 +1,14 @@
+<div class="genre2">
+
+  <h2>MakerGenre Edit</h2>
+
+
+  <div class="genre_form2">
+    <%= form_with model: @maker, url: admin_maker_genre_path(@maker.id), method: :patch, local:true do |f| %>
+      <%= f.text_field :mname %>
+      <%= f.submit "編集" %>
+    <% end %>
+  </div>
+
+</div>
+
