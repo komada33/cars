@@ -1,0 +1,82 @@
+// Place all the styles related to the user/parts_genres controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$text-deco: "a:link, a:visited, a:hover, a:active";
+
+.index-pgenre{
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .index-parts-genres{
+    border-top: 2px solid #ddd;
+    width: 700px;
+    padding: 30px auto;
+    #{$text-deco} {color: black;}
+    #{$text-deco} {text-decoration: none;}
+
+    &:last-child{
+        border-bottom: 2px solid #ddd;
+    }
+
+    .index-pname{
+      width: 100%;
+      font-weight: bold;
+      overflow: hidden;
+      padding-left: 150px;
+      padding-right: auto;
+      margin: 20px 0;
+      font-size: 20px;
+    }
+  }
+}
+
+.show-pgenre{
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .show-parts-genres{
+    border-top: 2px solid #ddd;
+    width: 700px;
+    padding: 30px auto;
+    margin-top: 10px;
+
+    .show-parts-genres-text{
+      margin-top: 10px;
+      width: 500px;
+      padding-left: 100px;
+      padding-right: auto;
+      #{$text-deco} {color: black;}
+      #{$text-deco} {text-decoration: none;}
+
+      .show-pname{
+        font-weight: bold;
+        width: 500px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .show-user-car{
+        font-weight: bold;
+        width: 500px;
+        font-size: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .show-parts-genres-image{
+      margin: 0 auto;
+      text-align: center;
+
+      .car-image{
+        max-width: 400px;
+        max-height: 700px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

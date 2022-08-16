@@ -1,0 +1,119 @@
+<%= render partial: 'layouts/sidebar' %>
+
+<div class="carpost">
+
+  <h3><%= @carpost.title %></h3>
+
+    <div class="carpost-show">
+
+      <div class="carpost-time">
+        <%= @carpost.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      </div>
+
+      <div class="carpost-user">
+        <div class="user-image">
+          <% if @carpost.user.plofile_image.attached? %>
+            <%= link_to user_path(@carpost.user.id) do %>
+              <%= image_tag @carpost.user.plofile_image, class: "plofile-image" %>
+            <% end %>
+          <% else %>
+            <%= link_to user_path(@carpost.user.id) do %>
+              <%= image_tag asset_path("no_image.jpg"), class: "plofile-image" %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="carpost-user-right">
+          <div class="name"><%=link_to @carpost.user.name, user_path(@carpost.user.id) %></div>
+          <div class="car-name"><%= link_to @carpost.user.maker_genre.mname, user_path(@carpost.user.id) %>. <%= link_to @carpost.user.car_name, user_path(@carpost.user.id) %></div>
+        </div>
+
+          <% if @carpost.user.id == current_user.id %>
+
+              <% else %>
+                <% if current_user.following(@carpost.user) %>
+                  <%= link_to "フォロー外す", user_relationships_path(@carpost.user.id), method: :delete, class: "follow" %>
+                <% else %>
+                  <%= link_to "フォローする", user_relationships_path(@carpost.user.id), method: :post, class: "follow" %>
+                <% end %>
+          <% end %>
+
+      </div>
+
+      <div class="slider">
+        <% @carpost.car_images.each do |carimages| %>
+            <%= link_to carimages.to_s, "data-ligthbox": carimages.to_s do %>
+          　   <%= image_tag carimages.url.to_s, class: "car-image" %>
+          　<% end %>
+          <% end %>
+      </div>
+
+      <div class="carpost-text">
+        <div class="carpost-genre">
+          ジャンル:<%= @carpost.parts_genre.pname %>
+        </div>
+
+        <div class="show-carpost-btn">
+          <div class="show-carpost-good">
+            <% if @carpost.gooded?(current_user) %>
+              <%= link_to car_post_good_path(@carpost.id), method: :delete do %>
+                <span style="color:red;"><i class="fa-solid fa-heart"></i>いいね！</span>
+              <% end %>
+            <% else %>
+              <%= link_to car_post_goods_path(@carpost.id), method: :post do %>
+                <span><i class="fa-regular fa-heart"></i>いいね！</span>
+              <% end %>
+            <% end %>
+            <%= @good_count %>
+          </div>
+          <div class="show-carpost-comment-count">
+            <i class="fa-regular fa-comment-dots"></i>コメント<%= @comment_count %>
+          </div>
+        </div>
+
+        <div class="text">
+          <%= safe_join(@carpost.message.split("\n"),tag(:br)) %>
+        </div>
+      </div>
+
+      <div class="carpost-edit">
+        <% if @carpost.user == current_user %>
+          <div class="edit"><%= link_to "編集する", edit_car_post_path(@carpost.id) %></div>
+
+      <% end %>
+      </div>
+
+    </div>
+
+    <div class="carpost-comment">
+      <h2>Comment!</h2>
+    </div>
+
+    <div class="comment-post">
+      <%= render partial: 'user/comments/form', local: { comment: @comment, car_post: @carpost } %>
+    </div>
+
+    <div id="comments_area">
+      <%= render partial: 'user/comments/index', local: { comments: @comments } %>
+    </div>
+
+
+</div>
+<script>
+window.onload = function () {
+  $(function() {
+    $('.slider').slick({
+      speed: 1000,
+
+      prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+      nextArrow: '<button class="slide-arrow next-arrow"></button>'
+    });
+  });
+
+  $('input').on('change', function () {
+      var file = $(this).prop('files')[0];
+      $('p').text(file.name);
+  });
+};
+
+</script>

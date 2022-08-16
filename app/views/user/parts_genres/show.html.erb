@@ -1,0 +1,33 @@
+<%= render partial: 'layouts/sidebar' %>
+
+<div class="show-pgenre">
+
+  <h2><%= @pgenre.pname %></h2>
+
+    <% @pgenres.each do |carpost| %>
+
+      <div class="show-parts-genres">
+
+        <div class="show-parts-genres-time">
+          <%= carpost.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+        </div>
+
+        <div class="show-parts-genres-text">
+          <div class="show-pname">
+            ジャンル:<%= link_to carpost.parts_genre.pname, car_post_path(carpost.id) %>
+          </div>
+          <div class="show-title">
+            <%= link_to carpost.title, car_post_path(carpost.id) %>
+          </div>
+        </div>
+        <div class="show-parts-genres-image">
+          <%= link_to car_post_path(carpost.id) do %>
+            <%= image_tag carpost.car_image, class: "car-image" %>
+          <% end %>
+        </div>
+
+      </div>
+
+    <% end %>
+
+</div>

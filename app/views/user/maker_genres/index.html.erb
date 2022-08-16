@@ -1,0 +1,20 @@
+<%= render partial: 'layouts/sidebar' %>
+
+<div class="index-mgenre">
+
+  <h2>MakerGenre!</h2>
+
+    <% @mgenres.each do |mgenre| %>
+
+      <div class="index-maker-genres">
+
+        <div class="index-mname">
+          <%= link_to mgenre.mname, maker_genre_path(mgenre.id) %>
+        </div>
+
+      </div>
+
+    <% end %>
+
+</div>
+

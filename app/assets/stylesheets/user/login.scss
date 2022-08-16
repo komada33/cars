@@ -1,0 +1,57 @@
+.form{
+  max-width: 500px;
+  margin: 30px auto 0;
+
+  .form-item{
+    border-top: 1px solid #ddd;
+    padding: 24px 50px;
+    width: 80%;
+
+
+    &:nth-child(3){
+      border-bottom: 1px solid #ddd;
+    }
+
+    .form-item-label{
+      width: 100px;
+      font-weight: bold;
+    }
+  }
+
+  input[type="email"]{
+    width: 300px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+  }
+
+  input[type="password"]{
+    width: 300px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+  }
+
+  .form-btn{
+    text-align: center;
+
+    input[type="submit"]{
+      margin: 30px;
+      width: 100px;
+      height: 30px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+    }
+  }
+
+  .btn{
+    display: block;
+    background-color: #ddd;
+    width: 200px;
+    height: 25px;
+    border-radius: 6px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+  }
+}

@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :user do
-    get 'users/edit'
-    get 'users/index'
-    get 'users/show'
-  end
   devise_for :users, skip: [:passwords] , controllers: {
   registrations: "user/registrations",
   sessions: 'user/sessions'
@@ -24,6 +19,25 @@ Rails.application.routes.draw do
     resources :maker_genres
     resources :parts_genres
   end
+
+  scope module: :user do
+    resources :users, only: [:index, :show, :edit, :update, :withdrawl] do
+      resource :relationships, only: [:create, :destroy]
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
+        collection do
+          get 'search'
+        end
+    end
+    resources :car_posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
+      resources :comments, only: [:create]
+      resources :goods, only: [:create, :destroy]
+    end
+    resources :comments, only: [:destroy, :edit, :update]
+    resources :maker_genres, only: [:index, :show]
+    resources :parts_genres, only: [:index, :show]
+  end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

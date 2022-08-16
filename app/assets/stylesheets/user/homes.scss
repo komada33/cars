@@ -1,3 +1,188 @@
 // Place all the styles related to the user/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$text-deco: "a:link, a:visited, a:hover, a:active";
+
+.home{
+  flex: 1;
+  width: 700px;
+  margin: 0 auto;
+
+  p{
+    border-top: 2px solid #ddd;
+  }
+
+  .home-post{
+    border-top: 2px solid #ddd;
+    width: 700px;
+    padding: 30px auto;
+    #{$text-deco} {color: black;}
+    #{$text-deco} {text-decoration: none;}
+
+    .new-post-time{
+      margin-top: 20px;
+    }
+
+    &:last-child{
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    .home-post-user{
+      width: 100%;
+      font-weight: bold;
+      overflow: hidden;
+      padding-left: 100px;
+      padding-right: auto;
+
+      .plofile-image{
+         width: 50px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 50%;
+        float: left;
+        object-fit: contain;
+      }
+
+      .home-user-right{
+        float: left;
+        padding: 10px 0;
+
+        .user-car{
+          font-size: 1px;
+        }
+      }
+    }
+
+    .slider{
+      display: none;
+    }
+
+    .slider.slick-initialized{
+      display: block;
+      width: 600px;
+      padding-bottom: 10px;
+      background-color: #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      #{$text-deco} {text-decoration: none;}
+
+      button{
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      .slide-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+      }
+
+      .prev-arrow{
+        left: -40px;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 15px solid #113463;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+      .next-arrow{
+        right: -40px;
+        width: 0;
+        height: 0;
+        border-right: 0 solid transparent;
+        border-left: 15px solid #113463;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+
+        .home-car-image{
+          max-width: 400px;
+          border-radius: 20px;
+          text-align: center;
+        }
+
+    }
+
+    .home-post-text{
+      width: 500px;
+      margin-left: 120px;
+      margin-bottom: 20px;
+
+      .home-genre{
+          font-weight: bold;
+          font-size: 1px;
+      }
+
+      .home-btn{
+        width: 500px;
+        display: flex;
+
+        .home-good{
+          background-color: #ddd;
+          width: 100px;
+          height: 25px;
+          border-radius: 6px;
+          color: black;
+          text-align: center;
+          margin: 0 0;
+        }
+
+        .home-comment-count{
+          background-color: #ddd;
+          width: 100px;
+          height: 25px;
+          border-radius: 6px;
+          color: black;
+          text-align: center;
+          margin: 0 10px;
+        }
+      }
+
+      .home-title{
+        width: 500px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.about{
+  flex: 1;
+  max-width: 700px;
+  margin: 100px auto;
+
+  .about-title{
+    border-top: 2px solid #ddd;
+    width: 700px;
+    text-align: center;
+    font-size: 30px;
+
+    h1{
+      margin: 30px;
+    }
+  }
+
+  .about-text{
+    border-bottom: 2px solid #ddd;
+    width: 700px;
+    padding: 30px auto;
+    text-align: center;
+    font-size: 18px;
+
+    p{
+      margin-bottom: 30px;
+    }
+  }
+}

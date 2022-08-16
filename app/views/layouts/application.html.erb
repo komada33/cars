@@ -8,6 +8,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
@@ -46,6 +49,13 @@
             <% end %>
           </ul>
         </nav>
+
+        <div class="search-box">
+          <%= search_form_for @search, url: car_posts_path do |f| %>
+            <%= f.text_field :title_or_message_or_parts_genre_pname_or_user_name_or_user_car_name_or_user_maker_genre_mname_cont %>
+            <%= f.submit 'search' %>
+          <% end %>
+        </div>
 
 
       </div>

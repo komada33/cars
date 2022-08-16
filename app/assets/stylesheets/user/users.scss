@@ -1,3 +1,411 @@
 // Place all the styles related to the user/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$text-deco: "a:link, a:visited, a:hover, a:active";
+
+.index-users{
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .index-user{
+    border-top: 2px solid #ddd;
+    width: 700px;
+    padding: 30px auto;
+    #{$text-deco} {color: black;}
+    #{$text-deco} {text-decoration: none;}
+
+    &:last-child{
+        border-bottom: 2px solid #ddd;
+     }
+
+    .index-user-content{
+      width: 100%;
+      font-weight: bold;
+      overflow: hidden;
+      padding-left: 150px;
+      padding-right: auto;
+      margin: 10px 0;
+
+      .plofile-image{
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 50%;
+        float: left;
+        object-fit: contain;
+      }
+
+      .index-user-right{
+        float: left;
+        padding: 10px 0;
+        width: 200px;
+
+        .index-user-name{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .index-user-car{
+          font-size: 1px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .index-user-follow{
+        display: block;
+        background-color: #ddd;
+        width: 130px;
+        height: 25px;
+        border-radius: 6px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        margin-left: 75px;
+        float: left;
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+.user-edit-form{
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .user-edit-item{
+    border-top: 1px solid #ddd;
+    padding: 0 auto;
+    width: 700px;
+
+    .user-edit-item-label{
+      margin-top: 10px;
+      margin-left: 150px;
+      font-weight: bold;
+
+      span{
+        font-size: 5px;
+      }
+    }
+
+    .user-edit-item-content{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .user-edit-image{
+      background-color: #ddd;
+      width: 200px;
+      border-radius: 6px;
+      border: solid 1px black;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .user-edit-plofile-image{
+      width: 250px;
+      height: 250px;
+      background-color: #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+
+      .edit-plofile-image{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: contain;
+        margin: 25px;
+      }
+    }
+  }
+
+  input[type="text"]{
+    width: 400px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+  }
+
+  input[type="file"]{
+    display: none;
+  }
+
+  .user-edit-submit{
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+  }
+
+  input[type="submit"]{
+    margin: 10px auto;
+    width: 100px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+  }
+
+  .select{
+    width: 410px;
+    height: 35px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+  }
+
+  .withdrawl{
+    display: block;
+    background-color: #ddd;
+    width: 100px;
+    height: 25px;
+    border-radius: 6px;
+    border: solid 1px black;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 10px;
+    #{$text-deco} {text-decoration: none;}
+    #{$text-deco} {color: red;}
+    margin-top: 10px;
+  }
+}
+
+.show-user{
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .show-user-content{
+    border-top: 2px solid #ddd;
+    width: 700px;
+    padding: 30px auto;
+    margin-top: 20px;
+
+    .show-user-box{
+      width: 100%;
+      font-weight: bold;
+      overflow: hidden;
+      #{$text-deco} {color: black;}
+      #{$text-deco} {text-decoration: none;}
+      padding-left: 100px;
+      padding-right: auto;
+      margin-top: 10px;
+
+      .plofile-image{
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 50%;
+        float: left;
+        object-fit: contain;
+      }
+
+      .show-user-right{
+        float: left;
+        padding: 10px 0;
+        width: 290px;
+
+        .show-user-name{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .show-user-car{
+          font-size: 1px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .show-user-follow{
+        display: block;
+        background-color: #ddd;
+        width: 130px;
+        height: 25px;
+        border-radius: 6px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        margin: 20px 0;
+        float: left;
+        margin-left: 15px;
+      }
+    }
+
+    .show-user-count{
+      overflow: hidden;
+      padding-left: 150px;
+      #{$text-deco} {color: black;}
+      #{$text-deco} {text-decoration: none;}
+      margin-bottom: 10px;
+
+      .show-user-followings{
+        float: left;
+        display: block;
+        background-color: #ddd;
+        width: 100px;
+        max-width: 200px;
+        height: 25px;
+        border-radius: 6px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .show-user-followers{
+        float: left;
+        display: block;
+        background-color: #ddd;
+        width: 110px;
+        max-width: 200px;
+        height: 25px;
+        border-radius: 6px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        margin-left: 10px;
+      }
+
+      .show-user-carposts-count{
+        float: left;
+        display: block;
+        background-color: #ddd;
+        width: 110px;
+        max-width: 200px;
+        height: 25px;
+        border-radius: 6px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .show-user-carposts{
+    width: 700px;
+    display: flex;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .show-user-carpost{
+    margin-top: 20px;
+    width: 700px;
+    padding: 0 auto;
+    border-bottom: 2px solid #ddd;
+
+    .show-user-carpost-time{
+      margin-bottom: 20px;
+    }
+
+    .slider{
+      display: none;
+    }
+
+    .slider.slick-initialized{
+      display: block;
+      width: 600px;
+      padding-bottom: 10px;
+      background-color: #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      #{$text-deco} {text-decoration: none;}
+
+      button{
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      .slide-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+      }
+
+      .prev-arrow{
+        left: -40px;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 15px solid #113463;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+      .next-arrow{
+        right: -40px;
+        width: 0;
+        height: 0;
+        border-right: 0 solid transparent;
+        border-left: 15px solid #113463;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+
+        .car-image{
+          max-width: 400px;
+          border-radius: 20px;
+          margin-top: 20px;
+          text-align: center;
+        }
+
+    }
+
+    .show-user-carpost-text{
+      width: 500px;
+      padding-left: 100px;
+      padding-right: auto;
+      margin-bottom: 20px;
+
+      .show-user-genre{
+        font-weight: bold;
+        font-size: 1px;
+      }
+
+      .show-user-btn{
+        width: 500px;
+        display: flex;
+
+        .show-user-good{
+          background-color: #ddd;
+          width: 100px;
+          height: 25px;
+          border-radius: 6px;
+          color: black;
+          text-align: center;
+          margin: 0 0;
+        }
+
+        .show-user-comment-count{
+          background-color: #ddd;
+          width: 100px;
+          height: 25px;
+          border-radius: 6px;
+          color: black;
+          text-align: center;
+          margin: 0 10px;
+        }
+      }
+
+      .show-user-title{
+        font-weight: bold;
+        width: 500px;
+      }
+    }
+  }
+}

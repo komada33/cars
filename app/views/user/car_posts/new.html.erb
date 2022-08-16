@@ -1,0 +1,96 @@
+<%= render partial: 'layouts/sidebar' %>
+
+<div class="new-form">
+
+  <h2>新規投稿</h2>
+
+  <%= form_with model: @carpost, url: car_posts_path, local:true do |f| %>
+
+  <div class="new-form-item">
+    <div class="new-form-item-label">
+      <%= f.label :parts_genre_id, "ジャンル" %>
+    </div>
+    <div class="new-form-item-content">
+      <%= f.collection_select :parts_genre_id, PartsGenre.all, :id, :pname, { include_blank: "選択して下さい" }, class: "select" %>
+    </div>
+  </div>
+
+  <div class="new-form-item">
+    <div class="new-form-item-label">
+      <%= f.label :title, "タイトル" %>
+    </div>
+    <div class="new-form-item-content">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="new-form-item">
+    <div class="new-form-item-label">
+      <%= f.label :message, "内容" %>
+    </div>
+    <div class="new-form-item-content">
+      <%= f.text_area :message %>
+    </div>
+  </div>
+
+  <div class="new-form-item">
+    <div class="new-form-image">
+      <%= f.label :car_images, "ファイルを選択" %>
+      <%= f.file_field :car_images, multiple: true %>
+    </div>
+    <p>※10枚まで選択できます</p>
+
+    <div class="new-form-images">
+      <img id="preview_0" class="car-image">
+      <img id="preview_1" class="car-image">
+      <img id="preview_2" class="car-image">
+      <img id="preview_3" class="car-image">
+      <img id="preview_4" class="car-image">
+      <img id="preview_5" class="car-image">
+      <img id="preview_6" class="car-image">
+      <img id="preview_7" class="car-image">
+      <img id="preview_8" class="car-image">
+      <img id="preview_9" class="car-image">
+    </div>
+
+  </div>
+
+  <div class="new-form-submit">
+   <%= f.submit "投稿" %>
+  </div>
+  <% end %>
+</div>
+
+<script>
+$('#car_post_car_images').on('change', function (e) {
+
+    if(e.target.files.length > 10){
+      alert('一度に投稿できるのは10枚までです。');
+
+      $('#car_post_car_images').val = "";
+      for( let i = 0; i < 10; i++) {
+        $(`#preview_${i}`).attr('src', "");
+        location.reload()
+      }
+
+    }else{
+      let reader = new Array(10);
+
+      for( let i = 0; i < 10; i++) {
+        $(`#preview_${i}`).attr('src', "");
+      }
+
+      for(let i = 0; i < e.target.files.length; i++) {
+        reader[i] = new FileReader();
+        reader[i].onload = finisher(i,e);
+        reader[i].readAsDataURL(e.target.files[i]);
+
+        function finisher(i,e){
+          return function(e){
+          $(`#preview_${i}`).attr('src', e.target.result);
+          }
+        }
+      }
+   }
+});
+</script>

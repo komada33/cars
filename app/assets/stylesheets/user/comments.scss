@@ -1,0 +1,40 @@
+// Place all the styles related to the user/comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.edit-comment{
+  flex: 1;
+  width: 700px;
+  margin: 10px auto;
+
+  .edit-comment-box{
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    padding: 30px auto;
+
+    .text{
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 30px;
+
+      textarea{
+        width: 400px;
+        height: 200px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+      }
+    }
+
+    .submit{
+      text-align: center;
+      margin-bottom: 30px;
+
+      input[type="submit"]{
+        margin-top: 10px;
+        align-items: center;
+        height: 30px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+      }
+    }
+  }
+}
