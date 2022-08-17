@@ -5,12 +5,16 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
 .index-users{
   flex: 1;
-  max-width: 700px;
+  width: 700px;
   margin: 0 auto;
+
+  p{
+    border-top: 2px solid #ddd;
+  }
 
   .index-user{
     border-top: 2px solid #ddd;
-    width: 700px;
+    width: 100%;
     padding: 30px auto;
     #{$text-deco} {color: black;}
     #{$text-deco} {text-decoration: none;}

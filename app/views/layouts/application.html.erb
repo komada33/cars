@@ -52,11 +52,21 @@
 
         <div class="search-box">
           <%= search_form_for @search, url: car_posts_path do |f| %>
-            <%= f.text_field :title_or_message_or_parts_genre_pname_or_user_name_or_user_car_name_or_user_maker_genre_mname_cont %>
-            <%= f.submit 'search' %>
+            <%= f.text_field :title_or_message_or_parts_genre_pname_or_user_name_or_user_car_name_or_user_maker_genre_mname_cont, placeholder: "キーワード検索" %>
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
           <% end %>
         </div>
 
+        <div class="search-box">
+          <%= search_form_for @user_search, url: users_path do |f| %>
+            <%= f.text_field :name_or_car_name_or_maker_genre_mname_cont, placeholder: "ユーザー検索" %>
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          <% end %>
+        </div>
 
       </div>
 

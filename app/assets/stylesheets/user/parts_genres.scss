@@ -33,8 +33,12 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
 .show-pgenre{
   flex: 1;
-  max-width: 700px;
+  width: 700px;
   margin: 0 auto;
+
+  p{
+    border-top: 2px solid #ddd;
+  }
 
   .show-parts-genres{
     border-top: 2px solid #ddd;
@@ -68,14 +72,62 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       }
     }
 
-    .show-parts-genres-image{
-      margin: 0 auto;
-      text-align: center;
+    .slider{
+      display: none;
+    }
 
-      .car-image{
+    .slider.slick-initialized{
+      display: block;
+      width: 600px;
+      padding-bottom: 10px;
+      background-color: #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      #{$text-deco} {text-decoration: none;}
+
+      button{
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      .slide-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+      }
+
+      .prev-arrow{
+        left: -40px;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 15px solid #113463;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+      .next-arrow{
+        right: -40px;
+        width: 0;
+        height: 0;
+        border-right: 0 solid transparent;
+        border-left: 15px solid #113463;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+
+      .home-car-image{
         max-width: 400px;
-        max-height: 700px;
-        border-radius: 10px;
+        border-radius: 20px;
+        text-align: center;
       }
     }
   }

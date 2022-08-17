@@ -33,17 +33,19 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
 .show-mgenre{
   flex: 1;
-  max-width: 700px;
   width: 700px;
-  margin: 10px auto;
+  margin: 0 auto;
+
+  p{
+    border-top: 2px solid #ddd;
+  }
 
   .show-maker-genres{
     border-top: 2px solid #ddd;
-    width: 700px;
+    width: 100%;
     padding: 30px auto;
     #{$text-deco} {color: black;}
     #{$text-deco} {text-decoration: none;}
-    display: flex;
 
     &:last-child{
         border-bottom: 2px solid #ddd;
@@ -55,7 +57,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       overflow: hidden;
       padding-left: 150px;
       padding-right: auto;
-      margin: 20px 0;
+      margin: 10px 0;
 
       .plofile-image{
         width: 50px;
@@ -63,6 +65,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         padding: 5px;
         border-radius: 50%;
         float: left;
+        object-fit: contain;
       }
 
       .show-maker-genres-right{

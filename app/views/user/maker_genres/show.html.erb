@@ -4,6 +4,10 @@
 
   <h2><%= @mgenre.mname %></h2>
 
+  <% unless @mgenres.present? %>
+    <p>ユーザーがいません</p>
+  <% else %>
+
     <% @mgenres.each do |user| %>
 
       <div class="show-maker-genres">
@@ -33,5 +37,5 @@
       </div>
 
     <% end %>
-
+  <% end %>
 </div>
