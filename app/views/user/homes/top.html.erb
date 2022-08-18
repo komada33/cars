@@ -17,18 +17,33 @@
 
         <div class="home-post-user">
           <% if carpost.user.plofile_image.attached? %>
-            <%= link_to user_path(carpost.user.id) do %>
-              <%= image_tag carpost.user.plofile_image, class: "plofile-image" %>
+
+            <% if carpost.user.is_deleted == false %>
+              <%= link_to user_path(carpost.user.id) do %>
+                <%= image_tag carpost.user.plofile_image, class: "plofile-image" %>
+              <% end %>
+            <% else %>
+              <%= link_to user_path(carpost.user.id) do %>
+                <%= image_tag asset_path("no_image"), class: "plofile-image" %>
+              <% end %>
             <% end %>
+
           <% else %>
             <%= link_to user_path(carpost.user.id) do %>
               <%= image_tag asset_path("no_image"), class: "plofile-image" %>
             <% end %>
           <% end %>
+
+
           <div class="home-user-right">
-            <div class="user-name"><%= link_to carpost.user.name, user_path(carpost.user.id) %></div>
+            <% if carpost.user.is_deleted == false %>
+              <div class="user-name"><%= link_to carpost.user.name, user_path(carpost.user.id) %></div>
+            <% else %>
+              <div class="user-name"><%= link_to "退会済のユーザー", user_path(carpost.user.id) %></div>
+            <% end %>
             <div class="user-car"><%= carpost.user.maker_genre.mname %>. <%= carpost.user.car_name %></div>
           </div>
+
         </div>
 
         <div class="slider">

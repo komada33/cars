@@ -167,19 +167,9 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       .index-user-right{
         float: left;
         padding: 10px 0;
-        width: 100px;
-
-        .user-name{
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
 
         .user-car{
           font-size: 1px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
         }
       }
     }
@@ -325,7 +315,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         padding: 10px 0;
         width: 290px;
 
-        .name{
+        .user-name{
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -337,6 +327,12 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
           overflow: hidden;
           text-overflow: ellipsis;
         }
+      }
+
+      .user-deleted{
+        float: left;
+        padding: 20px 0;
+        width: 290px;
       }
 
       .follow{

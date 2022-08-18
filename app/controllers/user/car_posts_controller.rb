@@ -30,6 +30,7 @@ class User::CarPostsController < ApplicationController
 
   def edit
     @carpost = CarPost.find(params[:id])
+      redirect_to root_path unless current_user.id == @carpost.user.id
   end
 
   def update
