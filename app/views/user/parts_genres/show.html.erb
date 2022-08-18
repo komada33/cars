@@ -18,10 +18,10 @@
 
         <div class="show-parts-genres-text">
           <div class="show-pname">
-            ジャンル:<%= link_to carpost.parts_genre.pname, car_post_path(carpost.id) %>
+            <%= link_to carpost.user.car_name, car_post_path(carpost.id) %> <%= link_to carpost.user.maker_genre.mname, car_post_path(carpost.id) %>
           </div>
           <div class="show-title">
-            <%= link_to carpost.title, car_post_path(carpost.id) %>
+            Title: <%= link_to carpost.title, car_post_path(carpost.id) %>
           </div>
         </div>
         <div class="slider">

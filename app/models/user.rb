@@ -21,6 +21,10 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
+  def favorited?(user)
+   favorites.where(user_id: user.id)
+  end
+
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end

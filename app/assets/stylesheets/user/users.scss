@@ -8,12 +8,16 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
   width: 700px;
   margin: 0 auto;
 
+  h2{
+    border-bottom: 2px solid #ddd;
+  }
+
   p{
-    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
   }
 
   .index-user{
-    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
     width: 100%;
     padding: 30px auto;
     #{$text-deco} {color: black;}

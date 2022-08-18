@@ -1,6 +1,6 @@
 class User::UsersController < ApplicationController
   def index
-    @users = User.all.page(params[:page]).per(10)
+    @users = User.all.page(params[:page]).per(20)
       redirect_to new_user_session_path unless user_signed_in?
   end
 
@@ -19,6 +19,13 @@ class User::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user.id)
+  end
+
+  def goods
+    @user = User.find(params[:id])
+    goods = Good.where(user_id: @user.id).pluck(:car_post_id)
+    @good_car_posts = CarPost.find(goods)
+    @good_car_posts = Kaminari.paginate_array(@good_car_posts).page(params[:page]).per(5)
   end
 
   def withdrawl

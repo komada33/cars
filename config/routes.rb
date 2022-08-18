@@ -28,6 +28,9 @@ Rails.application.routes.draw do
         collection do
           get 'search'
         end
+        member do
+          get :goods
+        end
     end
     resources :car_posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
       resources :comments, only: [:create]

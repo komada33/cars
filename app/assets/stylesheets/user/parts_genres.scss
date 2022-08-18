@@ -36,12 +36,16 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
   width: 700px;
   margin: 0 auto;
 
+  h2{
+    border-bottom: 2px solid #ddd;
+  }
+
   p{
     border-top: 2px solid #ddd;
   }
 
   .show-parts-genres{
-    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
     width: 700px;
     padding: 30px auto;
     margin-top: 10px;
@@ -53,14 +57,6 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       padding-right: auto;
       #{$text-deco} {color: black;}
       #{$text-deco} {text-decoration: none;}
-
-      .show-pname{
-        font-weight: bold;
-        width: 500px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
 
       .show-user-car{
         font-weight: bold;
