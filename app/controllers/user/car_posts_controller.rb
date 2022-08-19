@@ -16,7 +16,7 @@ class User::CarPostsController < ApplicationController
 
   def index
     @carposts = CarPost.all.page(params[:page]).per(5).order(created_at: :desc)
-      redirect_to new_user_session_path unless user_signed_in?
+      redirect_to new_user_session_path unless user_signed_in? or admin_signed_in?
   end
 
   def show
@@ -25,7 +25,7 @@ class User::CarPostsController < ApplicationController
     @comment = Comment.new
     @good_count = Good.where(car_post_id: @carpost.id).count
     @comment_count = Comment.where(car_post_id: @carpost.id).count
-      redirect_to new_user_session_path unless user_signed_in?
+      redirect_to new_user_session_path unless user_signed_in? or admin_signed_in?
   end
 
   def edit

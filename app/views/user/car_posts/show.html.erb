@@ -41,7 +41,8 @@
             <div class="car-name"><%= link_to @carpost.user.maker_genre.mname, user_path(@carpost.user.id) %>. <%= link_to @carpost.user.car_name, user_path(@carpost.user.id) %></div>
           </div>
 
-
+      <% if admin_signed_in? %>
+      <% else %>
         <% if @carpost.user.is_deleted == false %>
           <% if @carpost.user.id == current_user.id %>
           <% else %>
@@ -53,6 +54,7 @@
           <% end %>
         <% else %>
         <% end %>
+      <% end %>
 
       </div>
 
@@ -71,6 +73,11 @@
 
         <div class="show-carpost-btn">
           <div class="show-carpost-good">
+
+          <% if admin_signed_in? %>
+            <span><i class="fa-regular fa-heart"></i>いいね！</span><%= @good_count %>
+          <% else %>
+
             <% if @carpost.gooded?(current_user) %>
               <%= link_to car_post_good_path(@carpost.id), method: :delete do %>
                 <span style="color:red;"><i class="fa-solid fa-heart"></i>いいね！</span>
@@ -81,6 +88,9 @@
               <% end %>
             <% end %>
             <%= @good_count %>
+
+          <% end %>
+
           </div>
           <div class="show-carpost-comment-count">
             <i class="fa-regular fa-comment-dots"></i>コメント<%= @comment_count %>
@@ -95,8 +105,10 @@
       <div class="carpost-edit">
         <% if @carpost.user == current_user %>
           <div class="edit"><%= link_to "編集する", edit_car_post_path(@carpost.id) %></div>
-
-      <% end %>
+        <% end %>
+        <% if admin_signed_in? %>
+          <div class="edit"><%= link_to "削除", car_post_path(@carpost.id), method: :delete, "data-confirm" => "削除しますか？" %></div>
+        <% end %>
       </div>
 
     </div>
@@ -105,9 +117,12 @@
       <h2>Comment!</h2>
     </div>
 
-    <div class="comment-post">
-      <%= render partial: 'user/comments/form', local: { comment: @comment, car_post: @carpost } %>
-    </div>
+    <% if admin_signed_in? %>
+    <% else %>
+      <div class="comment-post">
+        <%= render partial: 'user/comments/form', local: { comment: @comment, car_post: @carpost } %>
+      </div>
+    <% end %>
 
     <div id="comments_area">
       <%= render partial: 'user/comments/index', local: { comments: @comments } %>
