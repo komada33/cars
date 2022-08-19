@@ -12,12 +12,15 @@ Rails.application.routes.draw do
   root 'user/homes#top'
   get "/about" => "user/homes#about", as: "about"
   patch "/user/edit" => "user/users#withdrawl", as: "withdrawl"
+  patch "/admin/users/:id/false" => "admin/users#withdrawl_false", as: "withdrawl_false"
+  patch "/admin/users/:id/true" => "admin/users#withdrawl_true", as: "withdrawl_true"
   get 'followings' => 'relationships#followings', as: 'followings'
   get 'followers' => 'relationships#followers', as: 'followers'
 
   namespace :admin do
     resources :maker_genres
     resources :parts_genres
+    resources :users, only: [:index, :show, :withdrawl_false, :withdrawl_true]
   end
 
   scope module: :user do

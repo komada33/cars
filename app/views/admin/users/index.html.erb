@@ -1,0 +1,51 @@
+<div class="admin-index-users">
+
+  <h2>Users!</h2>
+
+  <% unless @search_users.present? %>
+    <p>該当するユーザーがいません</p>
+  <% else %>
+
+    <% @search_users.each do |user| %>
+
+      <div class="admin-index-user">
+        <div class="admin-index-user-content">
+          <% if user.plofile_image.attached? %>
+
+            <%= link_to admin_user_path(user.id) do %>
+              <%= image_tag user.plofile_image, class: "plofile-image" %>
+            <% end %>
+
+          <% else %>
+
+            <%= link_to admin_user_path(user.id) do %>
+              <%= image_tag asset_path("no_image.jpg"), class: "plofile-image" %>
+            <% end %>
+
+          <% end %>
+
+
+            <div class="admin-index-user-right">
+              <div class="admin-index-user-name"><%= link_to user.name, admin_user_path(user.id) %></div>
+              <div class="admin-index-user-car"><%= link_to user.maker_genre.mname, admin_user_path(user.id) %>. <%= link_to user.car_name, admin_user_path(user.id) %></div>
+            </div>
+
+            <% if user.is_deleted == false %>
+              <div class="is_deleted-false"><i class="fa-solid fa-face-grin-beam"></i></div>
+            <% else %>
+              <div class="is_deleted-true"><i class="fa-solid fa-face-dizzy"></i></div>
+            <% end %>
+
+        </div>
+
+
+      </div>
+    <% end %>
+
+  <% end %>
+
+  <div class="page">
+    <%= paginate @search_users %>
+  </div>
+
+</div>
