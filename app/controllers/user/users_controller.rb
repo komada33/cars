@@ -38,6 +38,6 @@ class User::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :car_name, :is_deleted, :maker_genre_id, :plofile_image)
+    params.require(:user).permit(:name, :car_name, :email, :is_deleted, :maker_genre_id, :plofile_image)
   end
 end

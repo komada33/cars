@@ -5,7 +5,7 @@
 
   <div class="genre_form">
     <%= form_with model: @part, url: '/admin/parts_genres', local:true do |f| %>
-      <%= f.text_field :pname %>
+      <%= f.text_field :pname, placeholder: "パーツジャンル名作成" %>
       <%= f.submit "登録" %>
     <% end %>
   </div>

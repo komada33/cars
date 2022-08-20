@@ -1,48 +1,71 @@
-<div class="show-user">
+<div class="admin-show-user">
 
-  <div class="show-user-content">
+  <div class="admin-show-user-content">
 
-    <div class="show-user-box">
+    <div class="admin-show-user-box">
 
-      <% if @user.plofile_image.attached? %>
+      <div class="admin-show-user-status">
 
-        <%= link_to user_path(@user.id) do %>
-          <%= image_tag @user.plofile_image, class: "plofile-image" %>
-        <% end %>
+        <table>
+          <tr>
+            <th>ユーザー名</td>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th>メーカー</td>
+            <td><%= @user.maker_genre.mname %></td>
+          </tr>
+          <tr>
+            <th>車名</td>
+            <td><%= @user.car_name %></td>
+          </tr>
+          <tr>
+            <th>Eメール</td>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>ステータス</th>
+            <td>
+              <% if @user.is_deleted == false %>
+                <%= link_to withdrawl_true_path, method: :patch, "data-confirm" => "アカウントを停止しますか？" do %>
+                  <div class="is_deleted-false">起動中</div>
+                <% end %>
+              <% else %>
+                <%= link_to withdrawl_false_path, method: :patch, "data-confirm" => "アカウントを再開しますか？" do %>
+                    <div class="is_deleted-true">停止中</div>
+                <% end %>
+              <% end %>
 
-      <% else %>
-        <%= link_to user_path(@user.id) do %>
-          <%= image_tag asset_path("no_image.jpg"), class: "plofile-image" %>
-        <% end %>
-      <% end %>
+            </td>
+          </tr>
+        </table>
 
-      <div class="show-user-right">
-        <div class="show-user-name"><%= link_to @user.name, user_path(@user.id) %></div>
-        <div class="show-user-car"><%= link_to @user.maker_genre.mname, user_path(@user.id) %>. <%= link_to @user.car_name, user_path(@user.id) %></div>
+        <div class="admin-show-user-edit">
+          <div class="admin-show-user-edit-btn"><%= link_to "ユーザー編集", edit_admin_user_path(@user.id) %></div>
+          <div class="admin-show-user-delete-btn"><%= link_to "ユーザー削除", admin_user_path(@user.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></div>
+        </div>
+
       </div>
 
-      <% if @user.is_deleted == false %>
-        <%= link_to withdrawl_true_path, method: :patch, "data-confirm" => "アカウントを停止しますか？" do %>
-          <i class="fa-solid fa-face-grin-beam"></i>
+      <div class="admin-show-user-image">
+        <% if @user.plofile_image.attached? %>
+            <%= image_tag @user.plofile_image, class: "admin-plofile-image" %>
+        <% else %>
+            <%= image_tag asset_path("no_image.jpg"), class: "admin-plofile-image" %>
         <% end %>
-      <% else %>
-        <%= link_to withdrawl_false_path, method: :patch, "data-confirm" => "アカウントを再開しますか？" do %>
-          <i class="fa-solid fa-face-dizzy"></i>
-        <% end %>
-      <% end %>
-
+      </div>
 
     </div>
 
-    <div class="show-user-count">
-      <div class="show-user-followings"><%= link_to "フォロー", user_followings_path(@user.id) %>. <%= @user.followings.count %></div>
-      <div class="show-user-followers"><%= link_to "フォロワー", user_followers_path(@user.id) %>. <%= @user.followers.count %></div>
-      <div class="show-user-carposts-count">CarPosts. <%= @user.car_posts.count %></div>
+    <div class="admin-show-user-count">
+      <div class="admin-show-user-count-area">フォロー. <%= @user.followings.count %></div>
+      <div class="admin-show-user-count-area">フォロワー. <%= @user.followers.count %></div>
+      <div class="admin-show-user-count-area">CarPosts. <%= @user.car_posts.count %></div>
     </div>
 
   </div>
 
-  <div class="show-user-carposts">
+  <div class="admin-show-user-carposts">
     <h2>投稿一覧</h2>
   </div>
 
@@ -51,9 +74,9 @@
   <% else %>
 
   <% @carposts.each do |carpost| %>
-    <div class="show-user-carpost">
+    <div class="admin-show-user-carpost">
 
-      <div class="show-user-carpost-time">
+      <div class="admin-show-user-carpost-time">
         <%= carpost.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
       </div>
 
@@ -65,22 +88,22 @@
         <% end %>
       </div>
 
-      <div class="show-user-carpost-text">
+      <div class="admin-show-user-carpost-text">
 
-        <div class="show-user-genre">
+        <div class="admin-show-user-genre">
           ジャンル:<%= carpost.parts_genre.pname %>
         </div>
 
-        <div class="show-user-btn">
-          <div class="show-user-good">
+        <div class="admin-show-user-btn">
+          <div class="admin-show-user-good">
             <i class="fa-solid fa-heart"></i>いいね！<%= Good.where(car_post_id: carpost.id).count %>
           </div>
-          <div class="show-user-comment-count">
+          <div class="admin-show-user-comment-count">
             <i class="fa-regular fa-comment-dots"></i>コメント<%= Comment.where(car_post_id: carpost.id).count %>
           </div>
         </div>
 
-        <div class="show-user-title">
+        <div class="admin-show-user-title">
           <%= carpost.title %>
         </div>
 

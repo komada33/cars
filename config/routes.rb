@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :maker_genres
     resources :parts_genres
-    resources :users, only: [:index, :show, :withdrawl_false, :withdrawl_true]
+    resources :users, only: [:index, :show, :edit, :update, :destroy, :withdrawl_false, :withdrawl_true]
   end
 
   scope module: :user do

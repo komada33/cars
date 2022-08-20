@@ -1,61 +1,58 @@
-<%= render partial: 'layouts/sidebar' %>
-
-<div class="user-edit-form">
-　　<%= form_with model: @user, url: user_path(@user.id), method: :patch, local:true do |f| %>
-      <h2>ユーザー編集</h2>
-      <div class="user-edit-item">
-        <div class="user-edit-item-label">
+<div class="admin-user-edit-form">
+　　<%= form_with model: @user, url: admin_user_path(@user.id), method: :patch, local:true do |f| %>
+      <h2>管理者ユーザー編集</h2>
+      <div class="admin-user-edit-item">
+        <div class="admin-user-edit-item-label">
           <%= f.label :name, "ユーザーネーム" %><span>※20文字まで入力できます</span>
         </div>
-        <div class="user-edit-item-content">
+        <div class="admin-user-edit-item-content">
           <%= f.text_field :name %>
         </div>
       </div>
 
-      <div class="user-edit-item">
-        <div class="user-edit-item-label">
+      <div class="admin-user-edit-item">
+        <div class="admin-user-edit-item-label">
           <%= f.label :maker_genre_id, "メーカー" %>
         </div>
-        <div class="user-edit-item-content">
+        <div class="admin-user-edit-item-content">
           <%= f.collection_select :maker_genre_id, MakerGenre.all, :id, :mname, { include_blank: "選択して下さい" }, class: "select" %>
         </div>
       </div>
 
-      <div class="user-edit-item">
-        <div class="user-edit-item-label">
+      <div class="admin-user-edit-item">
+        <div class="admin-user-edit-item-label">
           <%= f.label :car_name, "車名" %><span>※20文字まで入力できます</span>
         </div>
-        <div class="user-edit-item-content">
+        <div class="admin-user-edit-item-content">
           <%= f.text_field :car_name %>
         </div>
       </div>
 
-      <div class="user-edit-item">
-        <div class="user-edit-item-label">
+      <div class="admin-user-edit-item">
+        <div class="admin-user-edit-item-label">
           <%= f.label :email, "Eメール" %>
         </div>
-        <div class="user-edit-item-content">
+        <div class="admin-user-edit-item-content">
           <%= f.text_field :email %>
         </div>
       </div>
 
-      <div class="user-edit-item">
-        <div class="user-edit-image">
+      <div class="admin-user-edit-item">
+        <div class="admin-user-edit-image">
           <%= f.label :plofile_image, "ユーザーアイコンを選択" %>
           <%= f.file_field :plofile_image %>
         </div>
-        <div class="user-edit-plofile-image">
+        <div class="admin-user-edit-plofile-image">
           <img id="preview" class="edit-plofile-image">
         </div>
       </div>
 
-      <div class="user-edit-submit">
-        <%= f.submit "編集" %>
+      <div class="admin-user-edit-item">
+        <div class="admin-user-edit-submit">
+          <%= f.submit "編集" %>
+        </div>
       </div>
 
-    <div class="withdrawl">
-    <%= link_to "退会する", withdrawl_path, method: :patch, "data-confirm" => "本当に退会しますか？" %>
-  </div>
   <% end %>
 </div>
 
