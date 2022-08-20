@@ -1,5 +1,5 @@
 
-<div class="genre">
+<div class="admin-pgenre">
 
   <h2>PartsGenre</h2>
 
@@ -10,19 +10,25 @@
     <% end %>
   </div>
 
+  <div class="admin-pgenres">
 
-  <% @parts.each do |parts_genre| %>
-    <div class="genres">
+    <% @parts.each do |parts_genre| %>
 
-      <div class="genre_name">
-        <%= parts_genre.pname %>
+      <div class="admin-pgenre-box">
+
+        <div class="admin-pgenre-name">
+          <%= parts_genre.pname %>
+        </div>
+
+        <div class="admin-pgenre-edit">
+          <%= link_to "編集", edit_admin_parts_genre_path(parts_genre.id) %>
+        </div>
+
       </div>
-      <div class="genre_edit">
-        <%= link_to "編集", edit_admin_parts_genre_path(parts_genre.id) %>
-      </div>
 
-    </div>
-  <% end %>
+    <% end %>
+
+  </div>
 
 </div>
 

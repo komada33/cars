@@ -9,24 +9,22 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
   margin: 0 auto;
 
   .index-maker-genres{
-    border-top: 2px solid #ddd;
-    width: 700px;
-    padding: 30px auto;
+    width: 690px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     #{$text-deco} {color: black;}
     #{$text-deco} {text-decoration: none;}
-
-    &:last-child{
-        border-bottom: 2px solid #ddd;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
 
     .index-mname{
-      width: 100%;
+      width: 230px;
       font-weight: bold;
-      overflow: hidden;
-      padding-left: 150px;
-      padding-right: auto;
-      margin: 20px 0;
       font-size: 20px;
+      margin-bottom: 10px;
     }
   }
 }
@@ -90,7 +88,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       .show-mgenre-follow{
         display: block;
         background-color: #ddd;
-        width: 100px;
+        width: 130px;
         height: 25px;
         border-radius: 6px;
         color: black;
@@ -99,7 +97,6 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         margin-left: 75px;
         float: left;
         margin: 20px 0;
-        margin-left: 70px;
       }
     }
   }

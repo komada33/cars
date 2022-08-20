@@ -22,6 +22,12 @@ class Admin::PartsGenresController < ApplicationController
     redirect_to admin_parts_genres_path
   end
 
+  def destroy
+    @part = PartsGenre.find(params[:id])
+    @part.destroy
+      redirect_to admin_parts_genres_path
+  end
+
   private
   def parts_genre_params
     params.require(:parts_genre).permit(:pname)

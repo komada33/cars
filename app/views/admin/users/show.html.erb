@@ -49,7 +49,9 @@
 
       <div class="admin-show-user-image">
         <% if @user.plofile_image.attached? %>
+          <%= link_to @user.plofile_image do %>
             <%= image_tag @user.plofile_image, class: "admin-plofile-image" %>
+          <% end %>
         <% else %>
             <%= image_tag asset_path("no_image.jpg"), class: "admin-plofile-image" %>
         <% end %>

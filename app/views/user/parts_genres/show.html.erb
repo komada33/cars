@@ -18,10 +18,10 @@
 
         <div class="show-parts-genres-text">
           <div class="show-pname">
-            <%= link_to carpost.user.car_name, car_post_path(carpost.id) %> <%= link_to carpost.user.maker_genre.mname, car_post_path(carpost.id) %>
+            <%= link_to carpost.user.car_name, car_post_path(carpost.id) %>. <%= link_to carpost.user.maker_genre.mname, car_post_path(carpost.id) %>
           </div>
           <div class="show-title">
-            Title: <%= link_to carpost.title, car_post_path(carpost.id) %>
+            Title: <span><%= link_to carpost.title, car_post_path(carpost.id) %></span>
           </div>
         </div>
         <div class="slider">

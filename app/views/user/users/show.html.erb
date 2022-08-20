@@ -9,28 +9,23 @@
       <% if @user.plofile_image.attached? %>
 
         <% if @user.is_deleted == false %>
-          <%= link_to user_path(@user.id) do %>
+          <%= link_to @user.plofile_image do %>
             <%= image_tag @user.plofile_image, class: "plofile-image" %>
           <% end %>
         <% else %>
-          <%= link_to user_path(@user.id) do %>
             <%= image_tag asset_path("no_image.jpg"), class: "plofile-image" %>
-          <% end %>
         <% end %>
-
       <% else %>
-        <%= link_to user_path(@user.id) do %>
           <%= image_tag asset_path("no_image.jpg"), class: "plofile-image" %>
-        <% end %>
       <% end %>
 
       <div class="show-user-right">
         <% if @user.is_deleted == false %>
-        <div class="show-user-name"><%= link_to @user.name, user_path(@user.id) %></div>
+        <div class="show-user-name"><%= @user.name %></div>
         <% else %>
-        <div class="show-user-name"><%= link_to "退会済ユーザー", user_path(@user.id) %></div>
+        <div class="show-user-name">退会済ユーザー</div>
         <% end %>
-        <div class="show-user-car"><%= link_to @user.maker_genre.mname, user_path(@user.id) %>. <%= link_to @user.car_name, user_path(@user.id) %></div>
+        <div class="show-user-car"><%= @user.maker_genre.mname %>. <%= @user.car_name %></div>
       </div>
 
       <% if @user.is_deleted == false %>

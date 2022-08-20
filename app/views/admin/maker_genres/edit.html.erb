@@ -1,13 +1,17 @@
-<div class="genre-edit">
+<div class="mgenre-edit">
 
   <h2>MakerGenre Edit</h2>
 
 
-  <div class="genre-form-edit">
+  <div class="mgenre-form-edit">
     <%= form_with model: @maker, url: admin_maker_genre_path(@maker.id), method: :patch, local:true do |f| %>
       <%= f.text_field :mname %>
       <%= f.submit "編集" %>
     <% end %>
+  </div>
+
+  <div class="mgenre-delete">
+    <%= link_to "削除", admin_maker_genre_path(@maker.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   </div>
 
 </div>

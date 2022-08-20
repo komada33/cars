@@ -22,6 +22,12 @@ class Admin::MakerGenresController < ApplicationController
     redirect_to admin_maker_genres_path
   end
 
+  def destroy
+    @maker = MakerGenre.find(params[:id])
+    @maker.destroy
+      redirect_to admin_maker_genres_path
+  end
+
   private
   def maker_genre_params
     params.require(:maker_genre).permit(:mname)

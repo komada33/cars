@@ -4,16 +4,19 @@
 
   <h2>PartsGenre!</h2>
 
-    <% @pgenres.each do |pgenre| %>
+    <div class="index-parts-genres">
 
-      <div class="index-parts-genres">
-
+      <% @pgenres.each do |pgenre| %>
+      
         <div class="index-pname">
+          
           <%= link_to pgenre.pname, parts_genre_path(pgenre.id) %>
+          
         </div>
+        
+      <% end %>
+      
 
-      </div>
-
-    <% end %>
+    </div>
 
 </div>

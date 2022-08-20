@@ -1,4 +1,4 @@
-<div class="genre">
+<div class="admin-mgenre">
 
   <h2>MakerGenre</h2>
 
@@ -9,19 +9,25 @@
     <% end %>
   </div>
 
+  <div class="admin-mgenres">
 
-  <% @makers.each do |maker_genre| %>
-    <div class="genres">
+    <% @makers.each do |maker_genre| %>
 
-      <div class="genre_name">
-        <%= maker_genre.mname %>
+      <div class="admin-mgenre-box">
+
+        <div class="admin-mgenre-name">
+          <%= maker_genre.mname %>
+        </div>
+
+        <div class="admin-mgenre-edit">
+          <%= link_to "編集", edit_admin_maker_genre_path(maker_genre.id) %>
+        </div>
+
       </div>
-      <div class="genre_edit">
-        <%= link_to "編集", edit_admin_maker_genre_path(maker_genre.id) %>
-      </div>
 
-    </div>
-  <% end %>
+    <% end %>
+
+  </div>
 
 </div>
 

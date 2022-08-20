@@ -26,6 +26,7 @@ class Admin::UsersController < ApplicationController
     @user.destroy
       redirect_to admin_users_path
   end
+
   def withdrawl_false
     redirect_to root_path unless admin_signed_in?
     @user = User.find(params[:id])

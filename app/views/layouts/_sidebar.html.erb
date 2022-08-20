@@ -24,13 +24,17 @@
         </div>
 
         <div class="side-menu">
-          <div class="side-list"><%= link_to "新規投稿", new_car_post_path %> <i class="fa-solid fa-pen-to-square"></i></div>
+          <div class="side-list-login"><%= link_to "新規投稿", new_car_post_path %> <i class="fa-solid fa-pen-to-square"></i></div>
 
-          <div class="side-list"><%= link_to "いいね!", goods_user_path(current_user) %> <i class="fa-solid fa-heart"></i></div>
+          <div class="side-list-login"><%= link_to "いいね!", goods_user_path(current_user) %> <i class="fa-solid fa-heart"></i></div>
 
-          <div class="side-list"><%= link_to "ユーザー編集", edit_user_path(current_user.id), class: "edit-btn" %> <i class="fa-solid fa-user-gear"></i></div>
+          <div class="side-list-login"><%= link_to "フォロー", user_followings_path(current_user.id) %> <i class="fa-solid fa-hand-holding-heart"></i></div>
 
-          <div class="side-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <i class="fa-solid fa-right-from-bracket"></i></div>
+          <div class="side-list-login"><%= link_to "フォロワー", user_followers_path(current_user.id) %> <i class="fa-solid fa-people-group"></i></div>
+
+          <div class="side-list-login"><%= link_to "ユーザー編集", edit_user_path(current_user.id) %> <i class="fa-solid fa-user-gear"></i></div>
+
+          <div class="side-list-login"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <i class="fa-solid fa-right-from-bracket"></i></div>
         </div>
    <% else %>
         <div class="side-image">
