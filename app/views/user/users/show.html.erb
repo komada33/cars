@@ -46,9 +46,9 @@
     </div>
 
     <div class="show-user-count">
-      <div class="show-user-followings"><%= link_to "フォロー", user_followings_path(@user.id) %>. <%= @user.followings.count %></div>
-      <div class="show-user-followers"><%= link_to "フォロワー", user_followers_path(@user.id) %>. <%= @user.followers.count %></div>
-      <div class="show-user-carposts-count">CarPosts. <%= @user.car_posts.count %></div>
+      <div class="show-user-counts"><%= link_to "フォロー", user_followings_path(@user.id) %>. <%= @user.followings.count %></div>
+      <div class="show-user-counts"><%= link_to "フォロワー", user_followers_path(@user.id) %>. <%= @user.followers.count %></div>
+      <div class="show-user-counts">CarPosts. <%= @user.car_posts.count %></div>
     </div>
 
   </div>

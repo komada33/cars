@@ -84,12 +84,12 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
 .admin-show-user{
   flex: 1;
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto;
 
   .admin-show-user-content{
     border-top: 2px solid #ddd;
-    width: 750px;
+    width: 800px;
     padding: 30px auto;
     margin-top: 20px;
 
@@ -107,7 +107,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         table{
           border-collapse:  collapse;
           margin-top: 25px;
-          margin-left: 20px;
+          margin-left: 40px;
           margin-bottom: 15px;
 
           th{
@@ -181,31 +181,29 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .admin-show-user-count{
       overflow: hidden;
-      padding-left: 190px;
       #{$text-deco} {color: black;}
       #{$text-deco} {text-decoration: none;}
       margin-bottom: 10px;
+      text-align:  center;
 
       .admin-show-user-count-area{
-        float: left;
         display: block;
         background-color: #ddd;
-        width: 110px;
-        max-width: 200px;
+        width: 120px;
+        max-width: 260px;
         height: 25px;
         border-radius: 6px;
         color: black;
         text-decoration: none;
         text-align: center;
-        padding-right: 5px;
-        margin-right: 5px;
-        margin-left: 5px;
+
+        display: inline-block;
       }
     }
   }
 
   .admin-show-user-carposts{
-    width: 750px;
+    width: 800px;
     display: flex;
     border-top: 2px solid #ddd;
     border-bottom: 2px solid #ddd;
@@ -213,7 +211,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
   .admin-show-user-carpost{
     margin-top: 20px;
-    width: 750px;
+    width: 800px;
     padding: 0 auto;
     border-bottom: 2px solid #ddd;
 

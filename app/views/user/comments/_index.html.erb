@@ -1,5 +1,10 @@
 <% @comments.each do |comment| %>
         <div class="comments">
+
+          <div class="comments-time">
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+          </div>
+
           <div class="comments-user">
             <div class="user-image">
               <% if comment.user.plofile_image.attached? %>

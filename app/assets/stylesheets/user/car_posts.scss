@@ -250,6 +250,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         .index-carposts-good{
           background-color: #ddd;
           width: 100px;
+          max-width: 300;
           height: 25px;
           border-radius: 6px;
           color: black;
@@ -260,6 +261,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         .index-carposts-comment-count{
           background-color: #ddd;
           width: 100px;
+          max-width: 200;
           height: 25px;
           border-radius: 6px;
           color: black;
@@ -411,7 +413,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .carpost-text{
       width: 500px;
-      margin-left: 120px;
+      margin-left: 60px;
 
       .carpost-genre{
         font-weight: bold;
@@ -425,6 +427,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         .show-carpost-good{
           background-color: #ddd;
           width: 100px;
+          max-width: 300;
           height: 25px;
           border-radius: 6px;
           color: black;
@@ -436,6 +439,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         .show-carpost-comment-count{
           background-color: #ddd;
           width: 100px;
+          max-width: 200;
           height: 25px;
           border-radius: 6px;
           color: black;
@@ -445,7 +449,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       }
 
       .text{
-        width: 500px;
+        width: 570px;
         font-weight: bold;
         font-size: 17px;
       }
@@ -531,13 +535,17 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       border-bottom: 2px solid #ddd;
     }
 
+    .comments-time{
+      margin-top: 5px;
+    }
+
     .comments-user{
       width: 100%;
       font-weight: bold;
       overflow: hidden;
-      padding-left: 100px;
+      padding-left: 60px;
       padding-right: auto;
-      margin-top: 10px;
+      margin-top: 5px;
 
       .plofile-image{
         width: 50px;
@@ -561,7 +569,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       .comment-btn{
         float: left;
         padding: 10px 0;
-        margin-left: 15px;
+        margin-left: 160px;
 
         .comment-delete{
           background-color: #ddd;
@@ -598,7 +606,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .comment{
       width: 100%;
-      margin-left: 100px;
+      margin-left: 60px;
       margin-bottom: 10px;
       overflow: hidden;
 
@@ -611,9 +619,10 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
           position: relative;
           margin: 0 0 0 50px;
           padding: 10px;
-          max-width: 550px;
+          max-width: 560px;
           border-radius: 12px;
           background: #edf1ee;
+
 
           :after{
             content: "";
@@ -625,11 +634,15 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
             border-right: 18px solid #edf1ee;
             -webkit-transform: rotate(35deg);
             transform: rotate(35deg);
+
           }
 
           p{
             margin: 0;
             padding: 0;
+            max-width: 560px;
+            overflow-wrap: break-word;
+
           }
         }
       }

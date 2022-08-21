@@ -249,50 +249,22 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .show-user-count{
       overflow: hidden;
-      padding-left: 150px;
+      text-align:  center;
       #{$text-deco} {color: black;}
       #{$text-deco} {text-decoration: none;}
       margin-bottom: 10px;
 
-      .show-user-followings{
-        float: left;
+      .show-user-counts{
         display: block;
         background-color: #ddd;
-        width: 100px;
-        max-width: 200px;
+        width: 120px;
+        max-width: 230px;
         height: 25px;
         border-radius: 6px;
         color: black;
         text-decoration: none;
         text-align: center;
-      }
-
-      .show-user-followers{
-        float: left;
-        display: block;
-        background-color: #ddd;
-        width: 110px;
-        max-width: 200px;
-        height: 25px;
-        border-radius: 6px;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-        margin-left: 10px;
-      }
-
-      .show-user-carposts-count{
-        float: left;
-        display: block;
-        background-color: #ddd;
-        width: 110px;
-        max-width: 200px;
-        height: 25px;
-        border-radius: 6px;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-        margin-left: 10px;
+        display: inline-block;
       }
     }
   }
@@ -393,6 +365,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         .show-user-good{
           background-color: #ddd;
           width: 100px;
+          max-width: 300;
           height: 25px;
           border-radius: 6px;
           color: black;
@@ -403,6 +376,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         .show-user-comment-count{
           background-color: #ddd;
           width: 100px;
+          max-width: 200;
           height: 25px;
           border-radius: 6px;
           color: black;
