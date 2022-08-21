@@ -1,5 +1,4 @@
 class CarPost < ApplicationRecord
-
   validates :title, presence: true, length: { maximum: 30 }
   validates :message, presence: true, length: { maximum: 900 }
   validates :parts_genre_id, presence: true
@@ -15,5 +14,4 @@ class CarPost < ApplicationRecord
   def gooded?(user)
     goods.where(user_id: user.id).exists?
   end
-
 end

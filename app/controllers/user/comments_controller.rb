@@ -17,15 +17,16 @@ class User::CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-      redirect_to car_post_path(@comment.car_post.id)
+    redirect_to car_post_path(@comment.car_post.id)
   end
 
   def destroy
     Comment.find(params[:id]).destroy
-      redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path)
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:post_comment, :car_post_id, :user_id)
   end

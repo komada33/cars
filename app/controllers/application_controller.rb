@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :plofile_image, :car_name, :maker_genre_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name plofile_image car_name maker_genre_id])
   end
 end
