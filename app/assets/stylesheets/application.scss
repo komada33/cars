@@ -25,7 +25,7 @@
 .body{
     display: flex;
     flex-direction: column;
-    background-image: url(<%= asset_path "car_images.jpg" %>);
+    background-image: url(<%= asset_path "car_images.url" %>);
 
     .header{
         z-index: 2;
