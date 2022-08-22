@@ -25,7 +25,7 @@
 .body{
     display: flex;
     flex-direction: column;
-    background-image: image-url("car_images.jpg");
+    background-image: image-url("/car_posts/:id");
 
     .header{
         z-index: 2;
