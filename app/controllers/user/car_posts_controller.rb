@@ -48,6 +48,6 @@ class User::CarPostsController < ApplicationController
   private
 
   def car_post_params
-    params.require(:car_post).permit(:title, :message, :user_id, :parts_genre_id, :comment_id, { car_images: [] })
+    params.require(:car_post).permit(:title, :message, :user_id, :parts_genre_id, :comment_id, {car_images: []})
   end
 end
