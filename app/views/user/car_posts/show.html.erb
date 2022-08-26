@@ -64,8 +64,8 @@
 
       <div class="slider">
         <% @carpost.car_images.each do |carimages| %>
-            <%= link_to carimages.url do %>
-          　   <%= image_tag carimages.url, class: "car-image" %>
+            <%= link_to carimages do %>
+          　   <%= image_tag carimages, class: "car-image" %>
           　<% end %>
           <% end %>
       </div>

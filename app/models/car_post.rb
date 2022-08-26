@@ -4,12 +4,11 @@ class CarPost < ApplicationRecord
   validates :parts_genre_id, presence: true
   validates :car_images, presence: true
 
-  mount_uploaders :car_images, CarImageUploader
   belongs_to :parts_genre
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :goods, dependent: :destroy
-  has_many_attached :car_images, dependent: :destroy
+  has_many_attached :car_images
 
   def gooded?(user)
     goods.where(user_id: user.id).exists?

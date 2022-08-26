@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_16_060850) do
+ActiveRecord::Schema.define(version: 2022_08_26_083012) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2022_08_16_060850) do
     t.text "message"
     t.integer "parts_genre_id"
     t.integer "user_id"
-    t.json "car_images"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
