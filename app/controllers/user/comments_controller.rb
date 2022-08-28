@@ -16,8 +16,11 @@ class User::CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update(comment_params)
-    redirect_to car_post_path(@comment.car_post.id)
+    if @comment.update(comment_params)
+      redirect_to car_post_path(@comment.car_post.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

@@ -5,6 +5,7 @@
   <h2>投稿編集</h2>
 
   <%= form_with model: @carpost, url: car_post_path(@carpost.id), method: :patch, local:true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
 
   <div class="edit-form-item">
     <div class="edit-form-item-label">
@@ -20,7 +21,7 @@
       <%= f.label :title, "タイトル" %>
     </div>
     <div class="edit-form-item-content">
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: "※30文字まで入力できます" %>
     </div>
   </div>
 

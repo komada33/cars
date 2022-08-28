@@ -1,12 +1,14 @@
 <div class="admin-user-edit-form">
 　　<%= form_with model: @user, url: admin_user_path(@user.id), method: :patch, local:true do |f| %>
+　　<%= render 'layouts/error_messages', model: f.object %>
+
       <h2>管理者ユーザー編集</h2>
       <div class="admin-user-edit-item">
         <div class="admin-user-edit-item-label">
-          <%= f.label :name, "ユーザーネーム" %><span>※20文字まで入力できます</span>
+          <%= f.label :name, "ユーザーネーム" %>
         </div>
         <div class="admin-user-edit-item-content">
-          <%= f.text_field :name %>
+          <%= f.text_field :name, placeholder: "※20文字まで入力できます" %>
         </div>
       </div>
 
@@ -21,10 +23,10 @@
 
       <div class="admin-user-edit-item">
         <div class="admin-user-edit-item-label">
-          <%= f.label :car_name, "車名" %><span>※20文字まで入力できます</span>
+          <%= f.label :car_name, "車名" %>
         </div>
         <div class="admin-user-edit-item-content">
-          <%= f.text_field :car_name %>
+          <%= f.text_field :car_name, placeholder: "※20文字まで入力できます" %>
         </div>
       </div>
 

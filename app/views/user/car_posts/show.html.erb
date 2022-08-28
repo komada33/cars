@@ -125,12 +125,12 @@
     <% if admin_signed_in? %>
     <% else %>
       <div class="comment-post">
-        <%= render partial: 'user/comments/form', local: { comment: @comment, car_post: @carpost } %>
+        <%= render 'user/comments/form', local: { comment: @comment, car_post: @carpost } %>
       </div>
     <% end %>
 
-    <div id="comments_area">
-      <%= render partial: 'user/comments/index', local: { comments: @comments } %>
+    <div class="comments_area">
+      <%= render 'user/comments/index', local: { comments: @comments } %>
     </div>
 
 

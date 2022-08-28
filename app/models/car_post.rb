@@ -1,6 +1,6 @@
 class CarPost < ApplicationRecord
   validates :title, presence: true, length: { maximum: 30 }
-  validates :message, presence: true, length: { maximum: 900 }
+  validates :message, presence: true
   validates :parts_genre_id, presence: true
   validates :car_images, presence: true
 

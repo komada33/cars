@@ -3,15 +3,15 @@
   <h2>Sign Up!</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "user/shared/error_messages", resource: resource %>
+  <%= render 'layouts/error_messages', model: f.object %>
 
   <div class="form-item">
     <div class="form-item-label">
-      <%= f.label :name, "ユーザーネーム" %><span>※20文字まで入力できます</span>
+      <%= f.label :name, "ユーザーネーム" %>
     </div>
 
     <div class="form-item-content">
-      <%= f.text_field :name, placeholder: "ユーザーネーム" %>
+      <%= f.text_field :name, placeholder: "※20文字まで入力できます" %>
     </div>
   </div>
 
@@ -26,10 +26,10 @@
 
   <div class="form-item">
     <div class="form-item-label">
-      <%= f.label :car_name, "車名" %>※20文字まで入力できます
+      <%= f.label :car_name, "車名" %>
     </div>
     <div class="form-item-content">
-      <%= f.text_field :car_name, placeholder: "車名" %>
+      <%= f.text_field :car_name, placeholder: "※20文字まで入力できます" %>
     </div>
   </div>
 
@@ -54,10 +54,10 @@
 
   <div class="form-item">
     <div class="form-item-label">
-      <%= f.label :password, "パスワード" %><span>※半角6文字以上で入力してください</span>
+      <%= f.label :password, "パスワード" %>
     </div>
     <div class="form-item-content">
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "※半角6文字以上で入力してください" %>
     </div>
   </div>
 

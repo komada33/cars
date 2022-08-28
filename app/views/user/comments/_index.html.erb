@@ -19,7 +19,11 @@
             </div>
 
             <div class="comments-user-right">
+              <% if @carpost.user.is_deleted == false %>
               <div class="name"><%= link_to comment.user.name, user_path(comment.user.id) %></div>
+              <% else %>
+              <div class="name"><%= link_to "大会済ユーザー", user_path(comment.user.id) %></div>
+              <% end %>
               <div class="car-name"><%= link_to comment.user.maker_genre.mname, user_path(comment.user.id) %>. <%= link_to comment.user.car_name, user_path(comment.user.id) %></div>
             </div>
 

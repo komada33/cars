@@ -26,8 +26,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
     }
 
     p{
-      font-size: 5px;
-      margin-top: 20px;
+      margin-top: 12px;
     }
 
     .new-form-image{
@@ -65,10 +64,6 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         margin: auto;
       }
     }
-
-    &:nth-child(5){
-      border-bottom: 1px solid #ddd;
-    }
   }
 
   input[type="text"]{
@@ -92,6 +87,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
   .new-form-submit{
     text-align: center;
+    border-top: 1px solid #ddd;
 
     input[type="submit"]{
       margin: 30px 50px;

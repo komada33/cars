@@ -1,9 +1,11 @@
 <%= render partial: 'layouts/sidebar' %>
 
+
 <div class="edit-comment">
   <h2>Comment Edit!</h2>
   <div class="edit-comment-box">
     <%= form_with model: @comment, url: comment_path(@comment.id), local:true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
       <div class="text"><%= f.text_area :post_comment %></div>
       <div class="submit"><%= f.submit 'コメントする' %></div>
     <% end %>

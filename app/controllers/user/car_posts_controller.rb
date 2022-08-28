@@ -35,8 +35,11 @@ class User::CarPostsController < ApplicationController
 
   def update
     @carpost = CarPost.find(params[:id])
-    @carpost.update(car_post_params)
-    redirect_to car_post_path(@carpost.id)
+    if @carpost.update(car_post_params)
+      redirect_to car_post_path(@carpost.id)
+    else
+      render "edit"
+    end
   end
 
   def destroy

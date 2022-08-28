@@ -80,7 +80,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 .user-edit-form{
   flex: 1;
   max-width: 700px;
-  margin: 0 auto;
+  margin: -30px auto 0;
 
   .user-edit-item{
     border-top: 1px solid #ddd;
@@ -91,10 +91,6 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       margin-top: 10px;
       margin-left: 150px;
       font-weight: bold;
-
-      span{
-        font-weight: 1;
-      }
     }
 
     .user-edit-item-content{

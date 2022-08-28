@@ -5,6 +5,7 @@
   <h2>新規投稿</h2>
 
   <%= form_with model: @carpost, url: car_posts_path, local:true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
 
   <div class="new-form-item">
     <div class="new-form-item-label">
@@ -20,7 +21,7 @@
       <%= f.label :title, "タイトル" %>
     </div>
     <div class="new-form-item-content">
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: "※30文字まで入力できます" %>
     </div>
   </div>
 
