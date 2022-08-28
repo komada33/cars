@@ -29,11 +29,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .admin-index-user-content{
       width: 100%;
-      font-weight: bold;
       overflow: hidden;
-      padding-left: 150px;
-      padding-right: auto;
-      margin: 10px 0;
+      margin: 10px 0 10px 120px;
 
       .plofile-image{
         width: 50px;
@@ -46,17 +43,17 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
       .admin-index-user-right{
         float: left;
-        padding: 10px 0;
+        padding: 5px 0;
         width: 200px;
 
         .admin-index-user-name{
+          font-weight: bold;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
 
         .admin-index-user-car{
-          font-size: 1px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -282,13 +279,10 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .admin-show-user-carpost-text{
       width: 500px;
-      padding-left: 100px;
-      padding-right: auto;
-      margin-bottom: 20px;
+      margin: 0 0 20px 100px;
 
       .admin-show-user-genre{
         font-weight: bold;
-        font-size: 1px;
       }
 
       .admin-show-user-btn{
@@ -340,7 +334,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       font-weight: bold;
 
       span{
-        font-size: 5px;
+        font-weight: 1;
       }
     }
 

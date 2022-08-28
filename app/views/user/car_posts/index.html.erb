@@ -48,7 +48,7 @@
               <% else %>
                 <div class="user-name"><%= link_to "退会済ユーザー", user_path(carpost.user.id) %></div>
               <% end %>
-              <div class="user-car"><%= carpost.user.maker_genre.mname %>. <%= carpost.user.car_name %></div>
+              <div class="user-car"><%= link_to carpost.user.maker_genre.mname, user_path(carpost.user.id) %>. <%= link_to carpost.user.car_name, user_path(carpost.user.id) %></div>
             </div>
 
         </div>

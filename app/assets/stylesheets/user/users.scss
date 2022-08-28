@@ -29,11 +29,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .index-user-content{
       width: 100%;
-      font-weight: bold;
       overflow: hidden;
-      padding-left: 150px;
-      padding-right: auto;
-      margin: 10px 0;
+      margin: 10px 0 10px 120px;
 
       .plofile-image{
         width: 50px;
@@ -46,17 +43,17 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
       .index-user-right{
         float: left;
-        padding: 10px 0;
+        padding: 5px 0;
         width: 200px;
 
         .index-user-name{
+          font-weight: bold;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
 
         .index-user-car{
-          font-size: 1px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -64,6 +61,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       }
 
       .index-user-follow{
+        font-weight: bold;
         display: block;
         background-color: #ddd;
         width: 130px;
@@ -72,9 +70,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         color: black;
         text-decoration: none;
         text-align: center;
-        margin-left: 75px;
         float: left;
-        margin: 20px 0;
+        margin: 20px 0 20px 75px;
       }
     }
   }
@@ -96,7 +93,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       font-weight: bold;
 
       span{
-        font-size: 5px;
+        font-weight: 1;
       }
     }
 
@@ -196,13 +193,10 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .show-user-box{
       width: 100%;
-      font-weight: bold;
       overflow: hidden;
       #{$text-deco} {color: black;}
       #{$text-deco} {text-decoration: none;}
-      padding-left: 100px;
-      padding-right: auto;
-      margin-top: 10px;
+      margin: 10px 0 10px 100px;
 
       .plofile-image{
         width: 50px;
@@ -215,17 +209,17 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
       .show-user-right{
         float: left;
-        padding: 10px 0;
+        padding: 5px 0;
         width: 290px;
 
         .show-user-name{
+          font-weight: bold;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
 
         .show-user-car{
-          font-size: 1px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -244,6 +238,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
         margin: 20px 0;
         float: left;
         margin-left: 15px;
+        font-weight: bold;
       }
     }
 
@@ -355,7 +350,6 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
       .show-user-genre{
         font-weight: bold;
-        font-size: 1px;
       }
 
       .show-user-btn{
@@ -370,7 +364,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
           border-radius: 6px;
           color: black;
           text-align: center;
-          margin: 0 0;
+          margin: 0;
         }
 
         .show-user-comment-count{

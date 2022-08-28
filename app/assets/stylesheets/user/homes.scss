@@ -30,10 +30,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
     .home-post-user{
       width: 100%;
-      font-weight: bold;
       overflow: hidden;
-      padding-left: 100px;
-      padding-right: auto;
+      margin-left: 100px;
 
       .plofile-image{
          width: 50px;
@@ -46,16 +44,16 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
       .home-user-right{
         float: left;
-        padding: 10px 0;
+        padding: 5px 0;
 
         .user-name{
+          font-weight: bold;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
 
         .user-car{
-          font-size: 1px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -129,8 +127,7 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       margin-bottom: 20px;
 
       .home-genre{
-          font-weight: bold;
-          font-size: 1px;
+        font-weight: bold;
       }
 
       .home-btn{

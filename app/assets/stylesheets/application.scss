@@ -23,6 +23,7 @@
 
 
 .body{
+    width: 910px;
     display: flex;
     flex-direction: column;
     background-image: image-url("carimages");
@@ -144,12 +145,16 @@
 
                 .side-name{
                     margin: 10px 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
 
             .side-menu{
                 width: 190px;
                 border-top: 2px solid #fff;
+                font-weight: bold;
 
                 .side-list{
                     display: block;
