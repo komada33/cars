@@ -248,8 +248,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
       .show-user-counts{
         display: block;
         background-color: #ddd;
-        width: 120px;
-        max-width: 230px;
+        width: fit-content;
+        padding: 0 5px;
         height: 25px;
         border-radius: 6px;
         color: black;
@@ -354,8 +354,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
         .show-user-good{
           background-color: #ddd;
-          width: 100px;
-          max-width: 300;
+          width: fit-content;
+          padding: 0 5px;
           height: 25px;
           border-radius: 6px;
           color: black;
@@ -365,8 +365,8 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
         .show-user-comment-count{
           background-color: #ddd;
-          width: 100px;
-          max-width: 200;
+          width: fit-content;
+          padding: 0 5px;
           height: 25px;
           border-radius: 6px;
           color: black;

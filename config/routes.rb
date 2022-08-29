@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       end
     end
     resources :car_posts, only: %i[new create index show edit update destroy] do
-      resources :comments, only: [:create]
+      resources :comments, only: %i[create]
       resources :goods, only: %i[create destroy]
     end
     resources :comments, only: %i[destroy edit update]

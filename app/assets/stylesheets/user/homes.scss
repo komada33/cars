@@ -136,22 +136,24 @@ $text-deco: "a:link, a:visited, a:hover, a:active";
 
         .home-good{
           background-color: #ddd;
-          width: 100px;
           height: 25px;
           border-radius: 6px;
           color: black;
           text-align: center;
           margin: 0 0;
+          width: fit-content;
+          padding: 0 5px;
         }
 
         .home-comment-count{
           background-color: #ddd;
-          width: 100px;
           height: 25px;
           border-radius: 6px;
           color: black;
           text-align: center;
           margin: 0 10px;
+          width: fit-content;
+          padding: 0 5px;
         }
       }
 
