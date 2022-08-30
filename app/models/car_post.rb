@@ -8,6 +8,7 @@ class CarPost < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :goods, dependent: :destroy
+  has_many :good_users, through: :goods, source: :user
   has_many_attached :car_images
 
   def gooded?(user)

@@ -76,6 +76,7 @@
         </div>
 
         <div class="show-carpost-btn">
+
           <div class="show-carpost-good">
 
           <% if admin_signed_in? %>
@@ -129,7 +130,7 @@
       </div>
     <% end %>
 
-    <div id="comments_area">
+    <div class="comments_area">
       <%= render 'user/comments/index', comments: @comments %>
     </div>
 
@@ -154,3 +155,4 @@ window.onload = function () {
 
 
 </script>
+

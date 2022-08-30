@@ -4,7 +4,7 @@ class User::CommentsController < ApplicationController
     @comment = @carpost.comments.build(comment_params)
     @comment.user_id = current_user.id
     if  @comment.save
-      redirect_back(fallback_location: root_path)
+      render :index
     else
       redirect_back(fallback_location: root_path)
     end

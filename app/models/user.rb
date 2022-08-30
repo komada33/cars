@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :car_posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :goods, dependent: :destroy
+  has_many :good_car_posts, through: :goods, source: :car_post
 
   has_many :relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
