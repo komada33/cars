@@ -11,7 +11,4 @@ class CarPost < ApplicationRecord
   has_many :good_users, through: :goods, source: :user
   has_many_attached :car_images
 
-  def gooded?(user)
-    goods.where(user_id: user.id).exists?
-  end
 end

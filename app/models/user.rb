@@ -22,8 +22,8 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
-  def favorited?(user)
-    favorites.where(user_id: user.id)
+  def gooded_by?(car_post_id)
+    goods.where(car_post_id: car_post_id).exists?
   end
 
   def follow(user_id)

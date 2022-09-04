@@ -1,0 +1,16 @@
+        <% if admin_signed_in? %>
+            <span><i class="fa-regular fa-heart"></i>いいね！</span><%= carpost.goods.count %>
+          <% else %>
+
+            <% if current_user.gooded_by?(carpost.id) %>
+              <%= link_to car_post_good_path(car_post_id: carpost.id, id: carpost.goods[0].id), method: :delete, remote: true do %>
+                <span style="color:red;"><i class="fa-solid fa-heart"></i>いいね！ <%= carpost.goods.count %></span>
+              <% end %>
+            <% else %>
+              <%= link_to car_post_goods_path(carpost), method: :post, remote: true do %>
+                <span><i class="fa-regular fa-heart"></i>いいね！ <%= carpost.goods.count %></span>
+              <% end %>
+            <% end %>
+
+
+        <% end %>
