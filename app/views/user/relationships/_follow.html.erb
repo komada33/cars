@@ -1,0 +1,8 @@
+  <% unless user == current_user %>
+    <% if current_user.following?(user) %>
+      <i class="fa-solid fa-handshake-simple-slash"></i><%= link_to "フォロー外す", user_relationship_path(user_id: user.id, id: user.id), method: :delete, remote: true %>
+    <% else %>
+        <i class="fa-solid fa-handshake-simple"></i><%= link_to "フォローする", user_relationships_path(user.id), method: :post, remote: true %>
+    <% end %>
+  <% end %>
+

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   scope module: :user do
     resources :users, only: %i[index show edit update withdrawl] do
-      resource :relationships, only: %i[create destroy]
+      resources :relationships, only: %i[create destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
       collection do
