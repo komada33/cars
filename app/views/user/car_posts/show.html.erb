@@ -48,7 +48,7 @@
           <% if @carpost.user.id == current_user.id %>
           <% else %>
             <div class="carpost-follow">
-              <div class="follow">
+              <div id = "follow_<%= @carpost.user.id %>">
                 <%= render 'user/relationships/follow', user: @carpost.user %>
               </div>
             </div>

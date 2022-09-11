@@ -33,7 +33,7 @@
           <% if @user.id == current_user.id %>
               <i class="fa-solid fa-user-gear"></i><%= link_to "ユーザー編集", edit_user_path(@user.id) %>
           <% else %>
-              <div class="follow">
+              <div id = "follow_<%= @user.id %>">
                 <%= render 'user/relationships/follow', user: @user %>
               </div>
           <% end %>
