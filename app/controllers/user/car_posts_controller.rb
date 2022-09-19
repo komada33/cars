@@ -23,8 +23,6 @@ class User::CarPostsController < ApplicationController
     @carpost = CarPost.find(params[:id])
     @comments = @carpost.comments
     @comment = Comment.new
-    @good_count = Good.where(car_post_id: @carpost.id).count
-    @comment_count = Comment.where(car_post_id: @carpost.id).count
     redirect_to new_user_session_path unless user_signed_in? or admin_signed_in?
   end
 
